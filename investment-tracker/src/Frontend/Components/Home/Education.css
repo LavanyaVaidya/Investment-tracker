@@ -1,0 +1,85 @@
+.home_education_{
+    display: flex;
+    align-items: center;
+    
+}
+
+.home_education{
+   
+    height: 420px;
+    width: 80%;
+    margin: 110px 0 200px 150px ;
+    border-radius: 29px;
+    border: 1.2px solid #FFF;
+    box-shadow: 3px 3px 20px 0px #dcd5d5;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.home_education img{
+max-height: 100%;
+max-width: 100%;
+object-fit: cover;
+}
+.home_education_learn{
+    
+    height: 45vh;
+    /* background-color: #5a287d; */
+   display: flex;
+ flex-direction: column;
+ align-items: center;
+ padding: 30px;
+}
+.home_education_learn span{
+font-family: Poppins;
+font-size: 59px;
+font-style: normal;
+font-weight: 700;
+line-height: 85px; 
+
+}
+.home_education_learn button{
+    margin-top: 40px;
+width: 122px;
+height: 44px;
+border-radius: 11px;
+background: #5a287d;
+border: none;
+color: #FFF;
+font-size: 20px;
+}
+.home_education_learn button:hover{
+    cursor: pointer;
+}
+
+@media (min-width: 751px) and (max-width: 1050px) {
+  
+    .home_education {
+        width: 90%;
+     margin: 0;
+     margin-left: 60px;
+     margin-top: 50px;
+     margin-bottom: 90px;
+    }
+}
+@media (min-width: 691px) and (max-width: 752px) {
+  
+    .home_education {
+        width: 100%;
+     margin: 50px 15px 90px 15px  ;
+    
+    }
+}
+
+@media (min-width: 310px) and (max-width: 692px) {
+  
+    .home_education {
+        width: 100%;
+        margin: 30px 10px 10px 10px ;
+    }
+    .home_education img{
+        height: 0px;
+        width: 0px;
+    }
+}
