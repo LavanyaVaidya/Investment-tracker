@@ -3,7 +3,8 @@ import './App.css';
 import NavBar from './Front-end/components/NavBar';
 import Learn from './Front-end/components/Learn';
 import Home from './Frontend/Components/Home/Home';
-import Footer from './Frontend/Components/Footer/Footer'
+import Footer from './Frontend/Components/Footer/Footer';
+import SignIn from './Login-Register/Components/SignIn';
 
 
 function App() {
