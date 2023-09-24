@@ -1,5 +1,5 @@
 import React from 'react';
-import '../CSS/navbar.css';
+import './navbar.css';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
@@ -39,10 +39,10 @@ const NavBar = () => {
                         <Link className="nav-link" to="/learn">Learn</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/">Pricing</Link>
+                        <Link className="nav-link" to="/pricing">Pricing</Link>
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to="/">Help and Support<FontAwesomeIcon icon={faQuestionCircle} /></Link>
+                        <Link className="nav-link" to="/support">Help and Support<FontAwesomeIcon icon={faQuestionCircle} /></Link>
                     </li>   
                 </ul>
             </div>

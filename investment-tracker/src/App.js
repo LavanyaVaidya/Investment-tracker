@@ -1,10 +1,11 @@
 import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import './App.css';
-import NavBar from './Front-end/components/NavBar';
-import Learn from './Front-end/components/Learn';
+import NavBar from './Frontend/Components/Navbar/NavBar';
+import Learn from './Frontend/Components/Learn/Learn';
 import Home from './Frontend/Components/Home/Home';
 import Footer from './Frontend/Components/Footer/Footer';
-import SignIn from './Login-Register/Components/SignIn';
+import Pricing from './Frontend/Components/Pricing/Pricing.js';
+import Support from './Frontend/Components/Support/Support'
 
 
 function App() {
@@ -14,6 +15,8 @@ function App() {
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/learn' element={<Learn/>}/>
+        <Route path='/pricing' element={<Pricing/>}/>
+        <Route path='/support' element={<Support/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

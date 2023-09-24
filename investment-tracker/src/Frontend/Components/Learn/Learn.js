@@ -1,9 +1,9 @@
 import React from 'react';
-import '../CSS/learn.css'
-import esg_image from '../esg_image.jpg'
-import esg1 from '../ESG-1.jpg';
-import esg2 from '../ESG-2.png';
-import esg3 from '../ESG-3.jpg'
+import './learn.css'
+import esg_image from '../Images/esg_image.jpg'
+import esg1 from '../Images/ESG-1.jpg';
+import esg2 from '../Images/ESG-2.png';
+import esg3 from '../Images/ESG-3.jpg'
 
 
 const Learn = () => {
