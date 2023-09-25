@@ -5,7 +5,8 @@ import Learn from './Frontend/Components/Learn/Learn';
 import Home from './Frontend/Components/Home/Home';
 import Footer from './Frontend/Components/Footer/Footer';
 import Pricing from './Frontend/Components/Pricing/Pricing.js';
-import Support from './Frontend/Components/Support/Support'
+import Support from './Frontend/Components/Support/Support';
+import SignInUp from './Frontend/Components/Login-Register/SignInUp';
 
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path='/learn' element={<Learn/>}/>
         <Route path='/pricing' element={<Pricing/>}/>
         <Route path='/support' element={<Support/>}/>
+        <Route path='/signup' element={<SignInUp />} /> 
       </Routes>
       <Footer/>
     </BrowserRouter>
