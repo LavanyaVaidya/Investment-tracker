@@ -3,7 +3,8 @@ import EducationImg from '../Images/home_education.png'
 // import EducationButtonLeft  from '../Images/education_buttonleft.svg'
 // import EducationButtonRight from '../Images/education_button.png'
 import Polygon from '../Images/polygon.png'
-import './Education.css'
+import './Education.css';
+import { Link } from 'react-router-dom';
 
 
 const Education = () => {
@@ -13,7 +14,7 @@ const Education = () => {
      <img src={EducationImg} alt='educa'></img>
      <div className='home_education_learn'>
      <span>Learning <br/>Opportunity </span>
-      <button>Learn</button>
+      <Link to='/learn'><button>Learn</button></Link>
      </div>
     </div>
     </div>

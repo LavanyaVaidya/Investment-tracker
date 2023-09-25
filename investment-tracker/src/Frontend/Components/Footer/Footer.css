@@ -10,7 +10,7 @@ footer{
   flex-wrap: wrap;
 }
 
-.card{
+.card-footer{
   margin: 20px;
   width: 280.545px;
   height: 324.741px;
@@ -22,7 +22,7 @@ footer{
   background-color:   #ddc1f91a;
 
 }
-.card>h2{
+.card-footer>h2{
 text-align: center;
 font-family: Myanmar Khyay;
 font-size: 34px;
@@ -30,7 +30,7 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 }
-.card>p{
+.card-footer>p{
 font-family: Myanmar Khyay;
 font-size: 17px;
 font-style: normal;
@@ -41,14 +41,14 @@ height: 120px;
 overflow: hidden;
 
 }
-.btn{
+.btn-footer{
   width: 133px;
   height: 44px;
   color: #5f596e;
   border: 2px solid #C792FC;
   border-radius: 4px;
 }
-.btn:hover{
+.btn-footer:hover{
   cursor: pointer;
   transform:   translate(-0px, -1px)
 }

@@ -1,0 +1,64 @@
+.gridGap{
+    display: grid;
+    gap: 32px;
+    padding: 5rem;
+    text-align: center;
+  }
+  
+  .pad{
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-bottom: 5rem;
+  }
+  
+  .equal-image {
+    object-fit: cover; 
+    width: 100%;
+    height: 200px; /* Adjust the height as needed to make images the same size */
+  }
+  
+  .borderBlack {
+    border: 1px solid black;
+  }
+  
+  .bg-custom-image {
+    background-image: url('../public/Images/Blue_bg.jpg');
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-repeat: no-repeat; /* Prevents tiling */
+    height: 400px;
+  }
+
+  .bg-custom-image3 {
+    background-image: url('../public/Images/Question.jpg');
+    background-size: cover; /* Ensures the image covers the entire container */
+    background-repeat: no-repeat; /* Prevents tiling */
+    height: 400px;
+  }
+
+  .purpinkGrad{
+    background-image: linear-gradient(to right, #5a287d, rgb(226, 71, 190));
+  }
+
+  .inputfield {
+    height: 100px;
+  }
+
+  .purpleColor {
+    background-color: #5a287d !important;
+    color: white !important;
+  }
+
+  .purpleBorder {
+    border: 1px solid #5a287d !important;
+  }
+
+  .lpurpleColor {
+    background-color: #d6cbd3 !important;
+    border: 2px solid #5a287d !important;
+  }
+
+  .sizeManageImage {
+    display: block;
+    max-width: 100%;
+    height: auto;
+  }

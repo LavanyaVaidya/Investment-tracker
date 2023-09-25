@@ -1,6 +1,7 @@
 import React from 'react'
 import './Main.css'
 import right from '../Images/main_image_right.png'
+import { Link } from 'react-router-dom'
 
 const Main = () => {
   return (
@@ -13,7 +14,10 @@ const Main = () => {
                Learn and Manage your stocks with experts guidance 
                <br/> on Portfolio watcher Invest in stocks , derivatives , <br/> mutual funds , and more 
                </p>
-               <button className='main_signup_btn'>Sign Up</button>
+              
+               <Link to="/signup"> 
+          <button className='main_signup_btn'>Sign Up</button>
+        </Link> 
            
        </div>
        <div className='main_image'>

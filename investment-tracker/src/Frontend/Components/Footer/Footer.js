@@ -20,7 +20,7 @@ const Footer = () => {
     <footer>
     <div className='footer'>
      
-      <div className='card Privacy'>
+      <div className='card-footer Privacy'>
         {/* icon , Heading , paragraph button 
          */}
          {<SecurityIcon/>}
@@ -28,28 +28,28 @@ const Footer = () => {
          <p>lorem ajsdhyu aiusd 
           ausdi asg akjsdi aiusd 
          </p>
-         <button className='btn'>More</button>
+         <button className='btn-footer'>More</button>
       </div>
 
-      <div className=' card Target'>
+      <div className=' card-footer Target'>
         {<TrackChangesIcon/>}
       <h2>Target</h2>
          <p>lorem ajsdhyu aiusd 
           ausdi asg akjsdi aiusd 
          </p>
-         <button className='btn'>More</button>
+         <button className='btn-footer'>More</button>
       </div>
 
-      <div className='card  ContactUs '>
+      <div className='card-footer ContactUs '>
         {<ContactMailIcon/>}
       <h2>ContactUs</h2>
          <p>lorem ajsdhyu aiusd 
           ausdi asg akjsdi aiusd 
          </p>
-         <button className='btn'>More</button>
+         <button className='btn-footer'>More</button>
       </div>
 
-      <div className='card FeedBack'>
+      <div className='card-footer FeedBack'>
        { <FeedbackIcon/>}
          <h2>FeedBack</h2>
          <p>lorem ajsdhyu aiusd 
@@ -65,7 +65,7 @@ const Footer = () => {
           zyi uduy qiwue qiwy qwueyt quwte 
           ashd auye qweui qeqye qwey 
          </p>
-         <button className='btn'>More</button>
+         <button className='btn-footer'>More</button>
       </div>
 
     </div>
