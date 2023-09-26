@@ -13,7 +13,7 @@ const Pricing = () => {
             </div>
         </div>
         <hr></hr>
-        <div className='container'>
+        <div className='container d-flex justify-content-center'>
             <div className='row gx-5'>
                 <div className="col-lg-6 py-5">
                     <div className="card h-100 lpurpleColor">
