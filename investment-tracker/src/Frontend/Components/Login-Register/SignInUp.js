@@ -35,20 +35,21 @@ const SignInUp = () => {
     }
   };
   return (
+    <body className='signinup-body'>
     <div>
       <div className={`cont ${isSignUp ? 's--signup' : ''}`}>
         <div className="form sign-in">
           <h2 className="myh2">Welcome</h2>
           <label>
             <span>Email</span>
-            <input type="email" />
+            <input type="email" className='signinupInput' />
           </label>
           <label>
             <span>Password</span>
-            <input type="password" />
+            <input type="password"  className='signinupInput'/>
           </label>
           <p className="forgot-pass">Forgot password?</p>
-          <button type="button" className="submit">
+          <button type="button" className="signinupsubmit">
             Sign In
           </button>
         </div>
@@ -69,23 +70,24 @@ const SignInUp = () => {
             <h2 className="myh2">Create your Account</h2>
             <label>
               <span>Name</span>
-              <input type="text" name="name" value={userData.name} onChange={handleChange} />
+              <input type="text" name="name" value={userData.name} onChange={handleChange}  className='signinupInput'/>
             </label>
             <label>
               <span>Email</span>
-              <input type="email" name="email" value={userData.email} onChange={handleChange} />
+              <input type="email" name="email" value={userData.email} onChange={handleChange}  className='signinupInput'/>
             </label>
             <label>
               <span>Password</span>
-              <input type="password" name="password" value={userData.password} onChange={handleChange} />
+              <input type="password" name="password" value={userData.password} onChange={handleChange}  className='signinupInput'/>
             </label>
-            <button type="button" className="submit" onClick={handleSignUp}>
+            <button type="button" className="signinupsubmit" onClick={handleSignUp}>
               Sign Up
             </button>
           </div>
         </div>
       </div>
     </div>
+    </body>
   );
 };
 
