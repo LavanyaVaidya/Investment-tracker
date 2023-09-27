@@ -6,12 +6,12 @@
     padding: 0;
 }
 
-body {
+.signinup-body {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     background: #ffffff;
 }
 
-input {
+.signinupInput {
     border: none;
     outline: none;
     background: none;
@@ -242,7 +242,7 @@ label span {
     text-transform: uppercase;
 }
 
-input {
+.signinupInput {
     display: block;
     width: 100%;
     margin-top: 5px;

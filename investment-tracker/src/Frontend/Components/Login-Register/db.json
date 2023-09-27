@@ -11,42 +11,6 @@
         "name": "Alice",
         "email": "alice@example.com",
         "password": "hashedpassword2"
-      },
-      {
-        "name": "Manpreet Kaur",
-        "email": "mkaurkohli7@gmail.com",
-        "password": "afsff",
-        "id": 3
-      },
-      {
-        "name": "Manpreet Kaur",
-        "email": "mkaurkohli7@gmail.com",
-        "password": "afsff",
-        "id": 4
-      },
-      {
-        "name": "Manpreet Kaur",
-        "email": "mkaurkohli7@gmail.com",
-        "password": "afsff",
-        "id": 5
-      },
-      {
-        "name": "Manpreet Kaur",
-        "email": "mkaurkohli7@gmail.com",
-        "password": "afsff",
-        "id": 6
-      },
-      {
-        "name": "Manpreet Kaur",
-        "email": "mkaurkohli7@gmail.com",
-        "password": "afsff",
-        "id": 7
-      },
-      {
-        "name": "Manpreet Kaur",
-        "email": "mkaurkohli7@gmail.com",
-        "password": "afsffdslkfnslkf",
-        "id": 8
       }
     ]
   }
