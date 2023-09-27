@@ -18,7 +18,7 @@
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
-.submit {
+.signinupsubmit {
     border: none;
     outline: none;
     background: none;
@@ -73,7 +73,7 @@
     transform: translate3d(-640px, 0, 0);
 }
 
-.submit {
+.signinupsubmit {
     display: block;
     margin: 0 auto;
     width: 260px;
@@ -259,7 +259,7 @@ label span {
     color: #cfcfcf;
 }
 
-.submit {
+.signinupsubmit {
     margin-top: 40px;
     margin-bottom: 20px;
     background: #5a287d;

@@ -49,7 +49,7 @@ const SignInUp = () => {
             <input type="password"  className='signinupInput'/>
           </label>
           <p className="forgot-pass">Forgot password?</p>
-          <button type="button" className="submit">
+          <button type="button" className="signinupsubmit">
             Sign In
           </button>
         </div>
@@ -80,7 +80,7 @@ const SignInUp = () => {
               <span>Password</span>
               <input type="password" name="password" value={userData.password} onChange={handleChange}  className='signinupInput'/>
             </label>
-            <button type="button" className="submit" onClick={handleSignUp}>
+            <button type="button" className="signinupsubmit" onClick={handleSignUp}>
               Sign Up
             </button>
           </div>
