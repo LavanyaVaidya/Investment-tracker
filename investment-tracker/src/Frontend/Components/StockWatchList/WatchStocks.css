@@ -1,0 +1,22 @@
+.watch_Stocks{
+    margin: 10px;
+}
+
+.add_stocks_btn{
+    display: flex;
+    justify-content: right;
+}
+.add_stock_input{
+    display: flex;
+    justify-content: right;
+}
+.stock_create{  
+  padding: 5px;
+  margin: 20px;
+  width: 100px;
+  height: 40px;
+  border: none;
+  font-size: 20px;
+
+}
+

@@ -4,31 +4,30 @@
   height: auto;
   display: flex;
   justify-content: space-around;
-  margin-top:70px;
-  /* background-color: bisque; */
+  margin:70px 0 40px 0;
 }
 
 .main_content {
- 
-  padding: 20px;
+  padding-top: 80px;
   color: #5f596e;
-  text-align: center;
-  font-size: 35px;
 }
-
-
-.p{
-  /* background-color: #5a287d; */
+.main_content_h1{
+  font-size: 46px;
+}
+.main_content_p{
+  margin-top: 20px;
   font-weight: 500;
-  font-size: 30px;
-  line-height: 30px;
-  letter-spacing: 0.1rem;
+  font-size: 23px;
+  line-height: 25px;
+  letter-spacing: 0.05rem;
 }
+
+
 
 .main_signup_btn {
 
   padding: 20px;
-  margin: 20px;
+  margin: 30px;
   color: #ffffff;
   font-size: 22px;
   border: none;

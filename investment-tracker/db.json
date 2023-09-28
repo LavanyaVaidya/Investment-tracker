@@ -1,0 +1,49 @@
+{
+  "categories": [
+      {
+        "id":1, 
+        "category":"Technology"
+      }, 
+     {
+      "id":2, 
+      "category":"Finance"
+     }, 
+     {
+      "id":3, 
+      "category":"Healthcare"
+     }
+  ],
+  "stocks": {
+    "Technology": [
+      {
+        "symbol":"GOOGL", 
+        "name": "Google", 
+        "change":"45%", 
+        "Turnover":5000
+      }, 
+      {
+        "symbol":"McSoft", 
+        "name": "Microsoft", 
+        "change":"67%", 
+        "Turnover":7000
+      }
+    ],
+    "Finance": [
+      {
+        "symbol":"Kia", 
+        "name": "Kangarao ", 
+        "change":"41%", 
+        "Turnover":5300
+      }
+    ],
+    "Healthcare": [
+      {
+        "symbol":"Kpmg", 
+        "name": "Kangana pardesh", 
+        "change":"45%", 
+        "Turnover":5000
+      }
+    ]
+  }
+}
+

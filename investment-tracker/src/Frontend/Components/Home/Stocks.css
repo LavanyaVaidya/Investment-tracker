@@ -14,6 +14,7 @@
     justify-content: space-around;
     flex-wrap: wrap;
     height: auto;
+ 
 }
 
 .home_stocks div { 
@@ -25,6 +26,9 @@
     border: 4px solid #C792FC;
     background: rgba(74, 15, 133, 0.06);
 }
+.home_stocks a{
+    text-decoration: none;
+}
 .home_stocks div img{
     padding: 20px 10px 0px 10px ;
     max-width: 80%;
@@ -32,6 +36,7 @@
     object-fit: cover;
 }
 .home_stocks div h2{
+   
     font-size: 30px;
     font-weight: 400;
     line-height: 116.5%;

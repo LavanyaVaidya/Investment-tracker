@@ -11,8 +11,14 @@ body {
     background: #ffffff;
 }
 
-input,
-button {
+input {
+    border: none;
+    outline: none;
+    background: none;
+    font-family: 'Open Sans', Helvetica, Arial, sans-serif;
+}
+
+.submit {
     border: none;
     outline: none;
     background: none;
@@ -67,7 +73,7 @@ button {
     transform: translate3d(-640px, 0, 0);
 }
 
-button {
+.submit {
     display: block;
     margin: 0 auto;
     width: 260px;
@@ -293,7 +299,7 @@ input {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
-h2 {
+.myh2 {
     
     color: #5a287d; /* Set the desired color */
     /* Add other styling properties as needed */

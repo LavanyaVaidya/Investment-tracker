@@ -7,7 +7,8 @@ import Footer from './Frontend/Components/Footer/Footer';
 import Pricing from './Frontend/Components/Pricing/Pricing.js';
 import Support from './Frontend/Components/Support/Support';
 import SignInUp from './Frontend/Components/Login-Register/SignInUp';
-
+import WatchList from './Frontend/Components/StockWatchList/WatchList';
+import Portfolio from './Frontend/Components/Portfolio/Portfolio'
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
         <Route path='/pricing' element={<Pricing/>}/>
         <Route path='/support' element={<Support/>}/>
         <Route path='/signup' element={<SignInUp />} /> 
+        <Route path='/watchlist' element={<WatchList/>}/>
+        <Route path='/portfolio' element={<Portfolio/>}/>
       </Routes>
       <Footer/>
     </BrowserRouter>

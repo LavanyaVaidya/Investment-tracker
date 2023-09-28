@@ -1,7 +1,8 @@
 footer{
-   
-    background-color:   #5B278E;
  
+  margin-top: 40px;
+    background-color:   #5B278E;
+  
 
 }
 .footer{
@@ -45,7 +46,7 @@ overflow: hidden;
   width: 133px;
   height: 44px;
   color: #5f596e;
-  border: 2px solid #C792FC;
+  border: 2px solid white;
   border-radius: 4px;
 }
 .btn-footer:hover{
