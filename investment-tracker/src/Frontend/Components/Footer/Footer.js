@@ -13,6 +13,7 @@ import YouTubeIcon from '@mui/icons-material/YouTube';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
 import TelegramIcon from '@mui/icons-material/Telegram';
 import TwitterIcon from '@mui/icons-material/Twitter';
+import {Link} from 'react-router-dom'
 
 
 const Footer = () => {
@@ -46,7 +47,7 @@ const Footer = () => {
          <p>lorem ajsdhyu aiusd 
           ausdi asg akjsdi aiusd 
          </p>
-         <button className='btn-footer'>More</button>
+         <Link to='/support'><button className='btn-footer'>More</button></Link>
       </div>
 
       <div className='card-footer FeedBack'>
@@ -65,7 +66,7 @@ const Footer = () => {
           zyi uduy qiwue qiwy qwueyt quwte 
           ashd auye qweui qeqye qwey 
          </p>
-         <button className='btn-footer'>More</button>
+         <Link to="/support"><button className='btn-footer'>More</button></Link>
       </div>
 
     </div>

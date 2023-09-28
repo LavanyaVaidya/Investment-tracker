@@ -6,19 +6,19 @@
     padding: 0;
 }
 
-body {
+.signinup-body {
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
     background: #ffffff;
 }
 
-input {
+.signinupInput {
     border: none;
     outline: none;
     background: none;
     font-family: 'Open Sans', Helvetica, Arial, sans-serif;
 }
 
-.submit {
+.signinupsubmit {
     border: none;
     outline: none;
     background: none;
@@ -73,7 +73,7 @@ input {
     transform: translate3d(-640px, 0, 0);
 }
 
-.submit {
+.signinupsubmit {
     display: block;
     margin: 0 auto;
     width: 260px;
@@ -242,7 +242,7 @@ label span {
     text-transform: uppercase;
 }
 
-input {
+.signinupInput {
     display: block;
     width: 100%;
     margin-top: 5px;
@@ -259,7 +259,7 @@ input {
     color: #cfcfcf;
 }
 
-.submit {
+.signinupsubmit {
     margin-top: 40px;
     margin-bottom: 20px;
     background: #5a287d;
