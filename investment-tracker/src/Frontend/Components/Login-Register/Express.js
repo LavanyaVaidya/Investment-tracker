@@ -21,12 +21,13 @@ app.use(bodyParser.json());
 
 // Create an absolute path to the db.json file
 const dbFilePath = path.join(__dirname, 'db.json');
+let users = [];
 
 // Route to handle user registration (signup)
 app.post('/users', (req, res) => {
   try {
     // Read existing user data from db.json using the absolute path
-    const users = JSON.parse(fs.readFileSync(dbFilePath, 'utf8'));
+    users = JSON.parse(fs.readFileSync(dbFilePath, 'utf8'));
 
     // Add the new user to the array
     users.push(req.body);
@@ -35,6 +36,25 @@ app.post('/users', (req, res) => {
     fs.writeFileSync(dbFilePath, JSON.stringify(users, null, 2));
 
     res.status(200).json({ message: 'User registered successfully' });
+  } catch (error) {
+    console.error('Error:', error);
+    res.status(500).json({ message: 'Internal server error' });
+  }
+});
+
+// Route to handle user login with a GET request
+app.get('/users', (req, res) => {
+  try {
+    const { email, password } = req.query;
+    const foundUser = users.find(
+      (user) => user.email === email && user.password === password
+    );
+
+    if (foundUser) {
+      res.status(200).json({ message: 'User logged in successfully', user: foundUser });
+    } else {
+      res.status(401).json({ message: 'User login failed' });
+    }
   } catch (error) {
     console.error('Error:', error);
     res.status(500).json({ message: 'Internal server error' });
