@@ -23,7 +23,7 @@ const Home = () => {
         <>
           
           <Main />
-          <Stocks />
+          {/* <Stocks /> */}
           <Education />
       
           
