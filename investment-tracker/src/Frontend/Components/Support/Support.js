@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import FAQAccordion from './FAQAccordian';
+import NavBar from '../Navbar/NavBar';
 
 const Support = () => {
     const [feedback, setFeedback] = useState('');
@@ -16,6 +17,7 @@ const Support = () => {
     };
   return (
     <>
+    <NavBar/>
     <div className='gridGap text-muted'>
         <div>
             <h2 className='pb-5'>FAQ</h2>

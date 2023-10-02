@@ -1,7 +1,10 @@
 import React from 'react'
+import NavBar from '../Navbar/NavBar'
 
 const Pricing = () => {
   return (
+    <>
+    <NavBar/>
     <div className='gridGap'>
         <div className='row'>
             <div className='col-lg-4'>
@@ -62,6 +65,7 @@ const Pricing = () => {
             </div>
         </div>
     </div>
+    </>
   )
 }
 

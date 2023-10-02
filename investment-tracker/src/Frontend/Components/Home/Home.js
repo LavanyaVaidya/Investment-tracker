@@ -8,7 +8,7 @@ import SignInUp from '../Login-Register/SignInUp'
 import { Route, Switch } from 'react-router-dom'
 import Home2 from '../../Components2/Home2'
 import NavBar from '../Navbar/NavBar'
-import Footer from '../Footer/Footer'
+import Footer from '../Footer/Footer';
 
 
 const Home = () => {
@@ -21,7 +21,7 @@ const Home = () => {
         <Home2></Home2>
       ) : (
         <>
-          
+          <NavBar/>
           <Main />
           {/* <Stocks /> */}
           <Education />

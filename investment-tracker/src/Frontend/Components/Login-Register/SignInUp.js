@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './lr.css'; // Import the CSS file
 import { useNavigate } from 'react-router-dom';
 import Home2 from '../../Components2/Home2';
+import NavBar from '../Navbar/NavBar';
 
 const SignInUp = () => {
   const navigate = useNavigate();
@@ -70,6 +71,8 @@ const SignInUp = () => {
   };
   
   return (
+    <>
+    <NavBar/>
     <body className="signinup-body">
       <div>
           <div className={`cont ${isSignUp ? 's--signup' : ''}`}>
@@ -161,6 +164,7 @@ const SignInUp = () => {
           </div>
       </div>
     </body>
+    </>
   );
 };
 

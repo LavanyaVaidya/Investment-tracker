@@ -21,14 +21,13 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/learn" element={<Learn />} />
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/support" element={<Support />} />
         <Route path="/signup" element={<SignInUp />} />
-        <Route path="/welcome/*" element={<Home2/>}/>
+        <Route path="/welcome/:user" element={<Home2/>}/>
         {/* <Route
           path="/welcome"
           element={<PrivateRouteComponent element={<Home2 />} isLoggedIn={isLoggedIn} />}
