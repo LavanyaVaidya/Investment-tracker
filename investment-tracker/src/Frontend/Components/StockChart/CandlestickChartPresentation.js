@@ -1,20 +1,17 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import HighchartsReact from 'highcharts-react-official';
 
-const CandlestickChartPresentation = ({chartOptions, Highcharts, volumeChartOptions }) => {
+const CandlestickChartPresentation = ({
+  containerOptions,
+  Highcharts,
+}) => {
   return (
     <div>
-      {chartOptions && (
-        <HighchartsReact highcharts={Highcharts} options={chartOptions} />
-      )}
-      {volumeChartOptions && (
-        <HighchartsReact
-          highcharts={Highcharts}
-          options={volumeChartOptions}
-        />
+      {containerOptions && (
+        <HighchartsReact highcharts={Highcharts} options={containerOptions} />
       )}
     </div>
-  )
-}
+  );
+};
 
-export default CandlestickChartPresentation
+export default CandlestickChartPresentation;

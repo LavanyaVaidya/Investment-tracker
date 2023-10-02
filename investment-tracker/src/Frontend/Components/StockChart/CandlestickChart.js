@@ -4,7 +4,7 @@ import Highcharts from 'highcharts/highstock';
 import CandlestickChartPresentation from './CandlestickChartPresentation';
 
 const CandlestickChart = ({ stockName }) => {
-  const [chartOptions, setChartOptions] = useState(null);
+  const [containerOptions, setContainerOptions] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -13,9 +13,9 @@ const CandlestickChart = ({ stockName }) => {
           'https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v3/get-chart',
           {
             params: {
-              interval: "1mo",
+              interval: '1mo',
               symbol: `${stockName}`,
-              range: '5y',
+              range: 'max',
               region: 'US',
               includePrePost: 'false',
               useYfid: 'true',
@@ -30,60 +30,82 @@ const CandlestickChart = ({ stockName }) => {
             },
           }
         );
-  
+
         const yahooData = response.data.chart.result[0];
-  
+
         const candlestickData = yahooData.timestamp.map((timestamp, index) => ({
-          x: timestamp * 1000, // Convert timestamp to milliseconds
+          x: timestamp * 1000,
           open: yahooData.indicators.quote[0].open[index],
           high: yahooData.indicators.quote[0].high[index],
           low: yahooData.indicators.quote[0].low[index],
           close: yahooData.indicators.quote[0].close[index],
-          color: yahooData.indicators.quote[0].close[index] >= yahooData.indicators.quote[0].open[index] ? 'green' : 'red',
+          color:
+            yahooData.indicators.quote[0].close[index] >=
+            yahooData.indicators.quote[0].open[index]
+              ? 'green'
+              : 'red',
         }));
-  
+
         const volumeData = yahooData.timestamp.map((timestamp, index) => ({
-          x: timestamp * 1000, // Convert timestamp to milliseconds
+          x: timestamp * 1000,
           y: yahooData.indicators.quote[0].volume[index],
         }));
-  
-        setChartOptions({
-          title: { 
-            text: '',
-          },
+
+        const scrollbar = {
+          enabled: true,
+        };
+
+        setContainerOptions({
           rangeSelector: {
             selected: 2,
+            inputEnabled: false,
+          },
+          navigator: {
+            enabled: true,
+          },
+          scrollbar: {
+            liveRedraw: false,
+          },
+          chart: {
+            height: 550,
+          },
+          title: {
+            text: `${stockName}`,
           },
           xAxis: {
-            type: 'datetime', // Use datetime type for x-axis
+            type: 'datetime',
           },
+          yAxis: [
+            {
+              title: {
+                text: 'Price',
+              },
+              height: '80%',
+              marginTop: 20,
+            },
+            {
+              title: {
+                text: 'Volume',
+              },
+              top: '85%',
+              height: '15%',
+              offset: 0,
+              marginTop: 20,
+            },
+          ],
           series: [
             {
               type: 'candlestick',
               name: 'Candlestick',
               data: candlestickData,
+              yAxis: 0,
             },
-          ],
-        });
-  
-        setVolumeChartOptions({
-          title: {
-            text: '',
-          },
-          xAxis: {
-            type: 'datetime',
-          },
-          yAxis: {
-            title: {
-              text: 'Volume',
-            },
-          },
-          series: [
             {
               type: 'column',
               name: 'Volume',
               data: volumeData,
               color: '#5a287d',
+              yAxis: 1,
             },
           ],
         });
@@ -95,12 +117,12 @@ const CandlestickChart = ({ stockName }) => {
     fetchData();
   }, [stockName]);
 
-  const [volumeChartOptions, setVolumeChartOptions] = useState(null);
-
   return (
     <div className='gridGap'>
-      <h3>{stockName}</h3>
-      <CandlestickChartPresentation Highcharts={Highcharts} chartOptions={chartOptions} volumeChartOptions={volumeChartOptions}/>
+      <CandlestickChartPresentation
+        Highcharts={Highcharts}
+        containerOptions={containerOptions}
+      />
     </div>
   );
 };
