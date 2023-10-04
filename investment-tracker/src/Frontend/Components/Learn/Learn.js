@@ -3,11 +3,14 @@ import './learn.css'
 import esg_image from '../Images/esg_image.jpg'
 import esg1 from '../Images/ESG-1.jpg';
 import esg2 from '../Images/ESG-2.png';
-import esg3 from '../Images/ESG-3.jpg'
+import esg3 from '../Images/ESG-3.jpg';
+import NavBar from '../Navbar/NavBar'
 
 
 const Learn = () => {
   return (
+    <>
+    <NavBar/>
     <div className='container'>
       <div className='container-main'>
         <div className='container-data d-flex flex-md-row flex-column justify-content-space-around'>
@@ -141,6 +144,7 @@ const Learn = () => {
         </div>
       </div>
       </div>
+      </>
   )
 }
 

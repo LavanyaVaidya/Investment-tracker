@@ -1,25 +1,23 @@
-import React from 'react';
-import './navbar.css';
+import React from 'react'
+import '../../Components/Navbar/navbar.css';
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 import {Link} from 'react-router-dom'
+import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
 
-
-
-const NavBar = () => {
+const NavbarLogin= ({heading}) => {
     const [expanded, setExpanded] = useState(false);
 
   const toggleNavbar = () => {
     setExpanded(!expanded);
   };
-  
   return (
     <div>
         <nav className="navbar navbar-dark navbar-expand-lg">
         <div className="container-fluid">
-                <p className="navbar-brand">Portfolio Watcher</p>
+                <p className="navbar-brand">{heading}</p>
                 <button className="navbar-toggler" 
                     onClick={toggleNavbar}
                     type="button" 
@@ -34,9 +32,6 @@ const NavBar = () => {
             <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul className="navbar-nav">
                     <li className="nav-item">
-                        <Link className="nav-link" to="/signup">Login/Register</Link>
-                    </li>
-                    <li className="nav-item">
                         <Link className="nav-link" to="/learn">Learn</Link>
                     </li>
                     <li className="nav-item">
@@ -45,6 +40,9 @@ const NavBar = () => {
                     <li className="nav-item">
                         <Link className="nav-link" to="/support">Help and Support<FontAwesomeIcon icon={faQuestionCircle} /></Link>
                     </li>   
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/"><FontAwesomeIcon icon={faUserCircle}/></Link>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -53,4 +51,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default NavbarLogin

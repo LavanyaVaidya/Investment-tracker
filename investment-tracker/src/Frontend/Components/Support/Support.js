@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import FAQAccordion from './FAQAccordian';
 import '../../../LCSS.css';
+import NavBar from '../Navbar/NavBar';
 
 const Support = () => {
     const [feedback, setFeedback] = useState('');
@@ -17,6 +18,7 @@ const Support = () => {
     };
   return (
     <>
+    <NavBar/>
     <div className='gridGap text-muted'>
         <div>
             <h2 className='pb-5'>FAQ</h2>
@@ -36,7 +38,7 @@ const Support = () => {
                     <div>
                         <h2 className='pt-5'>Still have a question ? Ask away.</h2>
                     </div>
-                    <form>
+                    <form onSubmit={handleFeedbackSubmit}>
                         <div className="form-outline mb-4">
                             <input type="text" id="form4Example1" className="form-control purpleBorder" placeholder='Name' />
                         </div>
@@ -59,7 +61,7 @@ const Support = () => {
     
     </div>
 
-        <div className='pad'>
+        <div className='pad' style={{textAlign: 'left'}}>
             <h2 className='pb-5 text-muted'>Feedback and Suggestions</h2>
             {submittedFeedback ? (
                 <div className="feedback-confirmation">

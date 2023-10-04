@@ -1,0 +1,25 @@
+.portfolio_stats{
+    margin: 20px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin: 0 0 20px 0;
+}
+.portfolio_stats  .label {
+    color: #9b9b9b;
+    margin-bottom: 5px;
+}
+.portfolio_stats .value {
+    margin: 0 0 10px 0;
+    line-height: 1;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 2em;
+}
+.portfolio_stats .text_decimal{
+    font-size: .5em;
+}
+.portfolio_stats .text_small{
+    font-size: 0.6em;
+}

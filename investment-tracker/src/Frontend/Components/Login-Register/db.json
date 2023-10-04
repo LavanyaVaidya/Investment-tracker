@@ -1,16 +1,82 @@
 {
-    "users": [
-      {
-        "id": 1,
-        "name": "John",
-        "email": "john@example.com",
-        "password": "hashedpassword1"
-      },
-      {
-        "id": 2,
-        "name": "Alice",
-        "email": "alice@example.com",
-        "password": "hashedpassword2"
-      }
-    ]
-  }
+  "users": [
+    {
+      "id": 1,
+      "name": "John",
+      "email": "john@example.com",
+      "password": "hashedpassword1"
+    },
+    {
+      "id": 2,
+      "name": "Alice",
+      "email": "alice@example.com",
+      "password": "hashedpassword2"
+    },
+    {
+      "name": "manpreet",
+      "email": "manpreetk.it.19@nitj.ac.in",
+      "password": "wpomaofm",
+      "id": 3
+    },
+    {
+      "name": "CBSE",
+      "email": "gargrk@nitj.ac.in",
+      "password": "qwerty",
+      "id": 4
+    },
+    {
+      "name": "CBSE",
+      "email": "gargrk@nitj.ac.in",
+      "password": "qwerty",
+      "id": 5
+    },
+    {
+      "name": "ab",
+      "email": "ab.com",
+      "password": "abcd",
+      "id": 6
+    },
+    {
+      "name": "ab",
+      "email": "ab.com",
+      "password": "abcd",
+      "id": 7
+    },
+    {
+      "name": "ab",
+      "email": "ab.com",
+      "password": "abcd",
+      "id": 8
+    },
+    {
+      "name": "ab",
+      "email": "ab.com",
+      "password": "abcd",
+      "id": 9
+    },
+    {
+      "name": "abc",
+      "email": "abc.com",
+      "password": "abcd",
+      "id": 10
+    },
+    {
+      "name": "abc",
+      "email": "abc.com",
+      "password": "abcd",
+      "id": 11
+    },
+    {
+      "name": "xyz",
+      "email": "xyz.com",
+      "password": "xyz",
+      "id": 12
+    },
+    {
+      "name": "George",
+      "email": "george@gmail.com",
+      "password": "george",
+      "id": 13
+    }
+  ]
+}
