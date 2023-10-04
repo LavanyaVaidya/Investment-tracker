@@ -1,5 +1,7 @@
 import React from 'react'
+import {useState} from 'react';
 import './Footer.css'
+import MyModal from './Modal';
 
 import TrackChangesIcon from '@mui/icons-material/TrackChanges';
 import SecurityIcon from '@mui/icons-material/Security';
@@ -15,8 +17,17 @@ import TelegramIcon from '@mui/icons-material/Telegram';
 import TwitterIcon from '@mui/icons-material/Twitter';
 import {Link} from 'react-router-dom'
 
-
 const Footer = () => {
+  const [showModal, setShowModal] = useState(false);
+
+  const handleShowModal = () => setShowModal(true);
+  const handleCloseModal = () => setShowModal(false);
+
+  const handleButtonClick = () => {
+    // Navigate to the specified URL
+    window.location.href = 'https://www.natwest.com/';
+  };
+
   return (
     <footer>
     <div className='footer'>
@@ -26,26 +37,25 @@ const Footer = () => {
          */}
          {<SecurityIcon/>}
          <h2>Privacy</h2>
-         <p>lorem ajsdhyu aiusd 
-          ausdi asg akjsdi aiusd 
+         <p>Your data is safe with us. Know how we use your data. Click to read
+          privacy policy.
          </p>
-         <button className='btn-footer'>More</button>
+         <button className='btn-footer' onClick={handleShowModal}>More</button>
+         <MyModal showModal={showModal} handleCloseModal={handleCloseModal} />
       </div>
 
       <div className=' card-footer Target'>
         {<TrackChangesIcon/>}
-      <h2>Target</h2>
-         <p>lorem ajsdhyu aiusd 
-          ausdi asg akjsdi aiusd 
+      <h2>Sponsered By</h2>
+         <p><h2>Natwest</h2>
          </p>
-         <button className='btn-footer'>More</button>
+         <button className='btn-footer' onClick={handleButtonClick}>More</button>
       </div>
 
       <div className='card-footer ContactUs '>
         {<ContactMailIcon/>}
       <h2>ContactUs</h2>
-         <p>lorem ajsdhyu aiusd 
-          ausdi asg akjsdi aiusd 
+         <p> If you have any questions, please don't hesitate to contact us. 
          </p>
          <Link to='/support'><button className='btn-footer'>More</button></Link>
       </div>
@@ -53,25 +63,15 @@ const Footer = () => {
       <div className='card-footer FeedBack'>
        { <FeedbackIcon/>}
          <h2>FeedBack</h2>
-         <p>lorem ajsdhyu aiusd 
-          ausdi asg akjsdi aiusd 
-          ashdiuy aiu adiu aisu aisu 
-          asdg aiue q eqwe oiwueu7 e9
-          zyi uduy qiwue qiwy qwueyt quwte 
-          ashd auye qweui qeqye qwey 
-          lorem ajsdhyu aiusd 
-          ausdi asg akjsdi aiusd 
-          ashdiuy aiu adiu aisu aisu 
-          asdg aiue q eqwe oiwueu7 e9
-          zyi uduy qiwue qiwy qwueyt quwte 
-          ashd auye qweui qeqye qwey 
+         <p>Have a question ? Ask our experts. We would love to solve any query and
+          would love to hear any feedback you have.
          </p>
          <Link to="/support"><button className='btn-footer'>More</button></Link>
       </div>
 
     </div>
     <div className='footer_social_media'>
-      <h3> Social media </h3>
+        <h3> Social media </h3>
     <hr></hr>
     <div className='social_media'>
        <span><FacebookIcon/></span>
