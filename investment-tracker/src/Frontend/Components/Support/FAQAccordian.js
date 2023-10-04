@@ -40,9 +40,9 @@ function FAQAccordion() {
     ]
   return (
     <div className="accordion accordion-flush" id="accordionFlushExample">
-    {FAQs.map((FAQ) => {
+    {FAQs.map((FAQ, index) => {
         return (
-            <div>
+            <div key={index}>
                 <div className="accordion-item">
                     <h2 className="accordion-header">
                     <button className="accordion-button collapsed lpurpleColor my-1" type="button" data-bs-toggle="collapse" data-bs-target={`#${FAQ.accordianID}`} aria-expanded="false" aria-controls={`${FAQ.accordianID}`}>
