@@ -1,5 +1,6 @@
 import React from 'react'
 import NavBar from '../Navbar/NavBar'
+import {Link} from 'react-router-dom'
 
 const Pricing = () => {
   return (
@@ -56,12 +57,14 @@ const Pricing = () => {
         <h3 className='text-muted'>Open An account now</h3>
         <div className='row'>
             <div className='col-ln-4'>
-            <button
-                type='button'
-                className='btn purpleColor'
-            >
-                Sign Up
-            </button>
+            <Link to="/signup">
+                <button
+                    type='button'
+                    className='btn purpleColor'
+                >
+                    Sign Up
+                </button>
+            </Link>
             </div>
         </div>
     </div>

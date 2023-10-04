@@ -20,6 +20,8 @@
     "boxicons": "^2.1.1",
     "express": "^4.18.2",
     "fs": "^0.0.1-security",
+    "highcharts": "^11.1.0",
+    "highcharts-react-official": "^3.2.1",
     "jquery": "^3.7.1",
     "popper.js": "^1.16.1",
     "react": "^18.2.0",
