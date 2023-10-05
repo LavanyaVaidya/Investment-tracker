@@ -6,6 +6,8 @@ import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 import {Link} from 'react-router-dom'
 import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
+import {useRef, useEffect} from 'react'
+import AppLayout from '../Side-bar/layout/AppLayout'
 
 const NavbarLogin= ({heading}) => {
     const [expanded, setExpanded] = useState(false);
@@ -13,6 +15,25 @@ const NavbarLogin= ({heading}) => {
   const toggleNavbar = () => {
     setExpanded(!expanded);
   };
+  const [isAppLayoutVisible,setAppLayoutVisible]=useState(false);
+  const appLayoutRef=useRef(null);
+  const toggleAppLayout=()=>{
+    setAppLayoutVisible(!isAppLayoutVisible);
+  }
+  useEffect(()=>
+  {
+      const handleClickOutside=(event)=>{
+        if(appLayoutRef.current && !appLayoutRef.current.contains(event.target))
+        {
+          setAppLayoutVisible(false);
+        }
+      };
+      document.addEventListener('mousedown',handleClickOutside);
+      return()=>
+      {
+        document.removeEventListener('mousedown',handleClickOutside);
+      };
+  },[]);
   return (
     <div>
         <nav className="navbar navbar-dark navbar-expand-lg">
@@ -41,7 +62,8 @@ const NavbarLogin= ({heading}) => {
                         <Link className="nav-link" to="/support">Help and Support<FontAwesomeIcon icon={faQuestionCircle} /></Link>
                     </li>   
                     <li className="nav-item">
-                        <Link className="nav-link" to="/"><FontAwesomeIcon icon={faUserCircle}/></Link>
+                        <FontAwesomeIcon className="nav-link" icon={faUserCircle} onClick={toggleAppLayout}/>
+                        {isAppLayoutVisible && <div ref={appLayoutRef}><AppLayout/></div>}
                     </li>
                 </ul>
             </div>

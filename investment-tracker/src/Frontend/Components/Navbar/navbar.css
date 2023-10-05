@@ -1,7 +1,10 @@
 .navbar{
+    position:fixed;
+    top:0px;
     background-color:#5a287d;
     width:100%;
     margin-bottom: 40px;
+    z-index: 1000;
   }
   
   .navbar .container-fluid p{
@@ -22,6 +25,8 @@
     color: white;
     width:auto;
   }
+  
+  
   
   .nav-link::before {
     content: "";
