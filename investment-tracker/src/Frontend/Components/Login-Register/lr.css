@@ -223,20 +223,20 @@
     transform: translateY(72px);
 }
 
-h2 {
+.myh2 {
     width: 100%;
     font-size: 26px;
     text-align: center;
 }
 
-label {
+.lb1 {
     display: block;
     width: 260px;
     margin: 25px auto 0;
     text-align: center;
 }
 
-label span {
+.lbs {
     font-size: 12px;
     color: #0b0b0b;
     text-transform: uppercase;

@@ -7,14 +7,16 @@ const app = express();
 const port = 3000;
 
 // Enable CORS (Cross-Origin Resource Sharing)
+// Enable CORS (Cross-Origin Resource Sharing)
 app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*'); // Allow requests from any origin
+  res.header('Access-Control-Allow-Origin', 'http://localhost:3001'); // Allow requests from your React app
   res.header(
     'Access-Control-Allow-Headers',
     'Origin, X-Requested-With, Content-Type, Accept'
   );
   next();
 });
+
 
 // Middleware for parsing JSON requests
 app.use(bodyParser.json());
@@ -26,9 +28,30 @@ let users = [];
 // Route to handle user registration (signup)
 app.post('/users', (req, res) => {
   try {
+    const { name, email, password } = req.body;
+
+    // Logging for debugging
+    console.log('Received data:', { name, email, password });
+
+    // Check if any of the fields are empty
+    if (!name || !email || !password) {
+      console.log('Empty field detected');
+      res.status(400).json({ message: 'All fields must be filled' });
+      return;
+    }
+    // if (!userData.name || !userData.email || !userData.password) {
+    //   alert('All fields must be filled');
+    //   return;
+    // }
     // Read existing user data from db.json using the absolute path
     users = JSON.parse(fs.readFileSync(dbFilePath, 'utf8'));
 
+    // Check if the email already exists
+    const existingUser = users.find((user) => user.email === req.body.email);
+    if (existingUser) {
+      res.status(409).json({ message: 'Email ID already exists, try logging in' });
+      return;
+    }
     // Add the new user to the array
     users.push(req.body);
 
