@@ -32,8 +32,15 @@ const SignInUp = () => {
 
       if (response.ok) {
         console.log('User registered successfully');
+        // Navigate to the login page or perform any other action you want
       } else {
-        console.error('User registration failed');
+        const responseBody = await response.json();
+        if (response.status === 409) {
+          console.error('Email ID already exists, try logging in');
+          // Display an error message to the user, e.g., by updating state
+        } else {
+          console.error('User registration failed');
+        }
       }
     } catch (error) {
       console.error('Error:', error);
@@ -78,8 +85,8 @@ const SignInUp = () => {
           <div className={`cont ${isSignUp ? 's--signup' : ''}`}>
             <div className="form sign-in">
               <h2 className="myh2">Welcome</h2>
-              <label>
-                <span>Email</span>
+              <label className='lb1'>
+                <span className='lbs'>Email</span>
                 <input
                   type="email"
                   className="signinupInput"
@@ -88,8 +95,8 @@ const SignInUp = () => {
                   onChange={handleChange}
                 />
               </label>
-              <label>
-                <span>Password</span>
+              <label className='lb1'>
+                <span className='lbs'>Password</span>
                 <input
                   type="password"
                   className="signinupInput"
@@ -122,8 +129,8 @@ const SignInUp = () => {
               </div>
               <div className="form sign-up">
                 <h2 className="myh2">Create your Account</h2>
-                <label>
-                  <span>Name</span>
+                <label className='lb1'>
+                  <span className='lbs'>Name</span>
                   <input
                     type="text"
                     name="name"
@@ -132,8 +139,8 @@ const SignInUp = () => {
                     className="signinupInput"
                   />
                 </label>
-                <label>
-                  <span>Email</span>
+                <label className='lb1'>
+                  <span className='lbs'>Email</span>
                   <input
                     type="email"
                     name="email"
@@ -142,8 +149,8 @@ const SignInUp = () => {
                     className="signinupInput"
                   />
                 </label>
-                <label>
-                  <span>Password</span>
+                <label className='lb1'>
+                  <span className='lbs'>Password</span>
                   <input
                     type="password"
                     name="password"
