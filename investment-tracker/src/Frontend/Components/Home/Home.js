@@ -16,7 +16,7 @@ const Home = () => {
   
   return (
     <div className='home'>
-     
+     {/* After removing this stocks Error gone  */}
       {isLoggedIn ? (
         <Home2></Home2>
       ) : (
