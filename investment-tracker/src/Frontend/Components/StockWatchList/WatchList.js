@@ -5,6 +5,7 @@ import './WatchList.css'
 import WatchHead from './WatchHead'
 import WatchCategory from './WatchCategory'
 import WatchStocks from './WatchStocks'
+import NavBar from '../Navbar/NavBar'
 
 
 //  Particular Category Stocks 
@@ -50,6 +51,7 @@ const WatchList = () => {
 
   return (
     <div className='watchList'>
+      <NavBar/>
              <WatchHead/>
              <WatchCategory />
             

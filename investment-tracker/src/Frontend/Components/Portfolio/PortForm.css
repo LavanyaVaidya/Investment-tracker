@@ -1,0 +1,69 @@
+.portfolio_form {
+    /* display: flex; */
+    /* flex-direction: column;
+   justify-content: right; */
+  }
+  .portfolio_add_form {
+    padding: 10px;
+    width: 122px;
+    border-radius: 11px;
+    background: #c7c2c2;
+    color: #444;
+    display: flex;
+  }
+  .portfolio_add_form button {
+    border: none;
+    background-color: inherit;
+    color: inherit;
+    font-size: 18px;
+  }
+  .portfolio_add_form:hover {
+    cursor: pointer;
+  }
+  .portfolio_add_form button:hover {
+    cursor: pointer;
+    color: black;
+  }
+  .add_form_icon:hover {
+    cursor: pointer;
+    color: black;
+  }
+  
+  /* Form CSS */
+  .portfolio_form_div {
+    /* max-width: fit-content; */
+  
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+  }
+  .portfolio_form_div input[type="text"] {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    font-size: 16px;
+    height: auto;
+    margin: 0;
+    outline: 0;
+    padding: 15px;
+    width: 80%;
+    background-color: #e8eeef;
+    color: #8a97a0;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+    margin-bottom: 30px;
+  }
+  .stock_port_input label {
+    margin-bottom: 8px;
+  }
+  .addStock_Portfolio_form button {
+    padding: 19px 39px 18px 39px;
+    color: #fff;
+    background-color: #444;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    width: 90%;
+    margin-bottom: 10px;
+  }
+  
