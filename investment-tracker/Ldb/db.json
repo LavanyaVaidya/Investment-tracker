@@ -1,0 +1,17 @@
+{
+  "questions": [
+    {
+      "email": "lavanya@yahoo.com",
+      "name": "lavi",
+      "question": "lll",
+      "id": 2
+    }
+  ],
+  "feedback": [
+    {
+      "email": "labu@gmail.com",
+      "feedback": "pledga",
+      "id": 1
+    }
+  ]
+}

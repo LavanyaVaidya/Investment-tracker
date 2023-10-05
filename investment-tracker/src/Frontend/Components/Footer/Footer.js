@@ -47,8 +47,8 @@ const Footer = () => {
       <div className=' card-footer Target'>
         {<TrackChangesIcon/>}
       <h2>Sponsered By</h2>
-         <p><h2>Natwest</h2>
-         </p>
+         <div><h2>Natwest</h2>
+         </div>
          <button className='btn-footer' onClick={handleButtonClick}>More</button>
       </div>
 

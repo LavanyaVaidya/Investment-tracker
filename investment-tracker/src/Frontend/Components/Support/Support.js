@@ -2,18 +2,61 @@ import React, {useState} from 'react'
 import FAQAccordion from './FAQAccordian';
 import '../../../LCSS.css';
 import NavBar from '../Navbar/NavBar';
+import axios from 'axios';
 
 const Support = () => {
-    const [feedback, setFeedback] = useState('');
-    const [submittedFeedback, setSubmittedFeedback] = useState('');
+
+    const [questionData, setQuestionData] = useState({
+        email: '',
+        name: '',
+        question: '',
+    });
+    const [feedbackData, setFeedbackData] = useState({
+        email: '',
+        feedback: '',
+    });
+
+    const handleQuestionChange = (e) => {
+        const {name, value} = e.target;
+        setQuestionData({
+            ...questionData,
+            [name]: value,
+        });
+    }
+
+    const handleFeedbackChange = (e) => {
+        const {name, value} = e.target;
+        setFeedbackData({
+            ...feedbackData,
+            [name]: value,
+        });
+    }
+
+    const handleQuestionSubmit = async (e) => {
+        e.preventDefault();
+        console.log(questionData);
+        try {
+            await axios.post('http://localhost:4200/questions', questionData);
+            alert('Data saved successfully !');
+            setQuestionData({email: '',name: '',question: '',})
+        } catch (error) {
+            console.error('Error saving data:', error);
+            alert('Error saving data. Please try again.');
+        }
+        e.target.reset();
+    };
 
     // Function to handle feedback submission
-    const handleFeedbackSubmit = (e) => {
+    const handleFeedbackSubmit = async (e) => {
         e.preventDefault();
-        // You can add logic here to send the feedback to a backend or handle it as needed.
-        // For this example, we'll just display a confirmation message.
-        setSubmittedFeedback(feedback);
-        setFeedback('');
+        try {
+            await axios.post('http://localhost:4200/feedback', feedbackData);
+            alert('Data saved successfully !');
+            setFeedbackData({email: '',name: '',question: '',})
+        } catch (error) {
+            console.error('Error saving data:', error);
+            alert('Error saving data. Please try again.');
+        }
         e.target.reset();
     };
   return (
@@ -38,17 +81,17 @@ const Support = () => {
                     <div>
                         <h2 className='pt-5'>Still have a question ? Ask away.</h2>
                     </div>
-                    <form onSubmit={handleFeedbackSubmit}>
+                    <form onSubmit={handleQuestionSubmit}>
                         <div className="form-outline mb-4">
-                            <input type="text" id="form4Example1" className="form-control purpleBorder" placeholder='Name' />
+                            <input type="text" name='name' className="form-control purpleBorder" placeholder='Name' onChange={handleQuestionChange}/>
                         </div>
 
                         <div className="form-outline mb-4">
-                            <input type="email" id="form4Example2" className="form-control purpleBorder" placeholder='Email' />
+                            <input type="email" name='email' className="form-control purpleBorder" placeholder='Email' onChange={handleQuestionChange}/>
                         </div>
 
                         <div className="form-outline mb-4">
-                            <textarea className="form-control purpleBorder" id="form4Example3" rows="4" placeholder='Question'></textarea>
+                            <textarea className="form-control purpleBorder" name='question' rows="4" placeholder='Question' onChange={handleQuestionChange}></textarea>
                         </div>
 
                         <button type="submit" className="btn purpleColor btn-block mb-4">Send</button>
@@ -63,25 +106,16 @@ const Support = () => {
 
         <div className='pad' style={{textAlign: 'left'}}>
             <h2 className='pb-5 text-muted'>Feedback and Suggestions</h2>
-            {submittedFeedback ? (
-                <div className="feedback-confirmation">
-                <p>Thank you for your feedback:</p>
-                <p>{submittedFeedback}</p>
-                </div>
-            ) : (
                 <form onSubmit={handleFeedbackSubmit}>
-                    <div className="mb-3">
-                        <label for="exampleInputEmail1" className="form-label">Email address</label>
-                        <input type="email" className="form-control purpleBorder" id="exampleInputEmail1" aria-describedby="emailHelp"/>
-                        <div id="emailHelp" className="form-text">We'll never share your email with anyone else.</div>
-                    </div>
-                    <div className="mb-3">
-                        <label for="exampleFeedback" className="form-label">Feedback</label>
-                        <input type="text" className="form-control inputfield purpleBorder" id="exampleFeedback"/>
-                    </div>
+                        <div className="form-outline mb-4">
+                            <input type="email" name='email' className="form-control purpleBorder" placeholder='Email' onChange={handleFeedbackChange}/>
+                        </div>
+
+                        <div className="form-outline mb-4">
+                            <textarea className="form-control purpleBorder" name='feedback' rows="4" placeholder='Feedback' onChange={handleFeedbackChange}></textarea>
+                        </div>
                     <button type="submit" className="btn purpleColor">Submit</button>
                 </form>
-            )}
         </div>
     </>
   )
