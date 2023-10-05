@@ -17,7 +17,6 @@
     "axios": "^1.5.0",
     "chart.js": "^4.4.0",
     "@types/jquery": "^3.5.20",
-    "axios": "^1.5.1",
     "body-parser": "^1.20.2",
     "bootstrap": "^5.3.2",
     "boxicons": "^2.1.1",
@@ -27,12 +26,9 @@
     "highcharts": "^11.1.0",
     "highcharts-react-official": "^3.2.1",
     "jquery": "^3.7.1",
-<<<<<<< Updated upstream
     "json-server": "^0.17.3",
-=======
     "mongoose": "^7.5.3",
     "nodemon": "^3.0.1",
->>>>>>> Stashed changes
     "popper.js": "^1.16.1",
     "react": "^18.2.0",
     "react-chartjs-2": "^5.2.0",
