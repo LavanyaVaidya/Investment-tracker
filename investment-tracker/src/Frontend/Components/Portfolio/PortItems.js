@@ -1,10 +1,16 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import './PortItems.css'
 
-const PortItems = ({holdingData}) => {
-    
-    console.log(holdingData)
+const PortItems = (props) => {
+    // console.log("inside portIrems");
+    const [holdingData, setHoldingData] = useState([]);
+  
+    useEffect(() => {
+      setHoldingData(props.holdingData)
+    }, [props.holdingData]);
 
+
+   console.log("Hold", holdingData)
   return (
     <div className='port_items'>
      <table>
@@ -31,31 +37,41 @@ const PortItems = ({holdingData}) => {
             </tr>
         </thead>
         <tbody>
-           {holdingData>0 &&
-           holdingData.map((stockItem)=>{
-            <tr>
-            <td className='instrument right-border'> 
+          {holdingData?.length>0 && holdingData?.map((stockItem)=>{
+            console.log(stockItem?.price?.length);
+            // if(stockItem?.price?.length){
+              return <>
+               <tr key={stockItem.symbol}>
+              <td className='instrument right-border'>
                 <span>{stockItem.symbol}</span>
-            </td>
-            <td className='right qty'>
-                <span>{stockItem.qty}</span>
-            </td>
-            <td className='right'>
-                <span>{stockItem.invested}</span>
-            </td>
-            <td className='right-border'>
+              </td>
+              <td className='right qty'>
+                <span>{stockItem.Quantity}</span>
+              </td>
+              <td className='right'>
+                <span>{stockItem.investedPrice}</span>
+              </td>
+              <td className='right-border'>
                 <span>{stockItem.price}</span>
-            </td>
-            <td className='right'>
-                <span>{stockItem.price*stockItem.qty}</span>
-            </td>
-            <td className='right'>
-                <span>{
-                    (((stockItem.price-stockItem.invested)/stockItem.invested)*100)
-                    }%</span>
-            </td>
-        </tr>
-           })}
+              </td>
+              <td className='right'>
+                <span>{stockItem.price * stockItem.Quantity}</span>
+              </td>
+              <td className='right'>
+                <span>
+                  {(((stockItem.price - stockItem.investedPrice) / stockItem.investedPrice) * 100).toFixed(2)}%
+                </span>
+              </td>
+            </tr>
+              </>
+            // }
+          })}
+        {/* {holdingData.length>0 && holdingData.map((stockItem) => {
+          if(stockItem?.price?.length)
+          return 
+           
+        })
+          } */}
         </tbody>
      </table>
     </div>
@@ -63,3 +79,5 @@ const PortItems = ({holdingData}) => {
 }
 
 export default PortItems
+
+

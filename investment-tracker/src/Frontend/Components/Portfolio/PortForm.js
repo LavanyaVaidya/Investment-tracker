@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import './PortForm.css'
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 const PortForm = ({ onAddInput }) => {
   const [displayForm, setDisplayForm] = useState(false);
@@ -14,7 +15,6 @@ const PortForm = ({ onAddInput }) => {
       alert("Enter a valid input");
       return;
     }
-
     onAddInput({investedPrice, Quantity, symbol});
     setInvestedPrice("");
     setQuantity("");
@@ -23,10 +23,14 @@ const PortForm = ({ onAddInput }) => {
 
   return (
     <div className="portfolio_form">
-      <button onClick={() => setDisplayForm(!displayForm)}>
+      <div className="portfolio_add_form" 
+      onClick={() => setDisplayForm(!displayForm)}>
+      <AddCircleOutlineIcon className="add_form_icon"/>
+      <button >
         {" "}
         {displayForm ? "Close" : "AddStock"}
       </button>
+      </div>
       <div className="portfolio_form_div">
       {displayForm && (
         <form

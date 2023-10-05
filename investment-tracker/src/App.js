@@ -12,6 +12,7 @@ import WatchList from './Frontend/Components/StockWatchList/WatchList';
 import Portfolio from './Frontend/Components/Portfolio/Portfolio'
 // import PrivateRoute from './Frontend/Components2/PrivateRoute';
 import Home2 from './Frontend/Components2/Home2';
+import NavBar from './Frontend/Components/Navbar/NavBar';
 // import Navigate from 'react-router-dom'
 
 // const PrivateRouteComponent = ({ element, isLoggedIn }) => {
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    
       <Routes>
         <Route path='/' element={<Home/>}/>
         <Route path='/learn' element={<Learn/>}/>

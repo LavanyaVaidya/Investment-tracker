@@ -1,34 +1,34 @@
 {
-  "watchListDb":[
+  "watchListDb": [
     {
-      "id":1, 
-      "symbol":"GOOG"
+      "id": 1,
+      "symbol": "GOOG"
     }
   ],
   "portfolio": [
     {
       "id": 1,
       "symbol": "GOOGL",
-      "invested": "987",
-      "qty": "56"
-    }
-  ], 
-
-  "posts": [
+      "investedPrice": "987",
+      "Quantity": "56"
+    },
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "investedPrice": "089",
+      "Quantity": "67",
+      "symbol": "MSFT",
+      "id": 2
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "investedPrice": "8901",
+      "Quantity": "67",
+      "symbol": "GOOG",
+      "id": 3
+    },
+    {
+      "investedPrice": "8901",
+      "Quantity": "78",
+      "symbol": "KPMG",
+      "id": 4
     }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
