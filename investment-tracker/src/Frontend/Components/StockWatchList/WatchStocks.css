@@ -20,3 +20,10 @@
 
 }
 
+.add_stock_input form button{
+    border:none; 
+    font-size: 20px;
+    width: 100%;
+    margin-bottom: 2px;
+    padding: 4px;
+}
