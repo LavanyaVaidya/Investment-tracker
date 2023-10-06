@@ -1,10 +1,10 @@
 import React, { useEffect, useState, useRef } from "react";
 import "./WatchList.css";
-
 import WatchHead from "./WatchHead";
 import WatchCategory from "./WatchCategory";
 import WatchStocks from "./WatchStocks";
 import NavBar from "../Navbar/NavBar";
+
 
 
 const apikey = "&apikey=77f4427f83aa6fc8cb2033ca7f3d873d";
@@ -12,7 +12,7 @@ const Base_Url = "https://financialmodelingprep.com/api/v3/stock-screener?";
 
 const WatchList = () => {
   const [symbols, setSymbols] = useState(); 
-  // const [allstockData, setAllStocksData] = useState(); // from external API
+  const [allstockData, setAllStocksData] = useState(); // from external API
   const [inScreenerData, setInScreenerData] = useState();
   const [searchedCategory, setSearchedCategory] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -25,22 +25,55 @@ const WatchList = () => {
     };
     getWatchListSym();
 
+
+    
     // const getStocksDataList = async()=>{
     //   const res = await getAllStocksData();
     //   setAllStocksData(res);
+      
     // }
     // getStocksDataList();
+
+//      if (allstockData?.length > 0) {
+//   postAllStocksScreenerData(allstockData)
+//   .then((response) => {
+//     console.log('Data posted successfully:', response);
+//   })
+//   .catch((error) => {
+//     console.error('Error posting data:', error);
+//   });
+// }
+
+
 
     const getStockScreenerDataList = async () => {
       const res = await getStockScreenerData();
       setInScreenerData(res);
     };
     getStockScreenerDataList();
+
   }, []);
 
   useEffect(() => {
     getDataOnLoad();
   }, [inScreenerData]);
+
+
+
+// // POST If there is not data 
+//   const postAllStocksScreenerData = async(allstockData) =>{
+//   const options = {
+//     method: "POST",
+//     body: JSON.stringify(allstockData),
+//     headers: {
+//       "Content-Type": "application/json",
+//     },
+//   };
+//   const response = await fetch("http://localhost:9001/Stocks_Screener_data", options);
+//   const result = await response.json();
+//   console.log("HSON ", result)
+//   return result;
+// }
 
   const intialData = useRef([]);
 
@@ -65,18 +98,18 @@ const WatchList = () => {
   };
 
   const getStockScreenerData = async () => {
-    const response = await fetch("http://localhost:9001/Stocks_Screener_data");
+    const response = await fetch("http://localhost:9000/Stocks_Screener_data");
     const result = response.json();
     return result;
   };
 
-  // const getAllStocksData = async(sym) =>{
+  // const getAllStocksData = async() =>{
   //   const response = await fetch(`${Base_Url}${apikey}`);
   //   const result = response.json();
   //   return result;
   // }
   const getWatchListSymbols = async () => {
-    const response = await fetch("http://localhost:9001/watchListDb");
+    const response = await fetch("http://localhost:9000/watchListDb");
     const result = response.json();
     return result;
   };
@@ -89,7 +122,7 @@ const WatchList = () => {
         "Content-Type": "application/json",
       },
     };
-    const response = await fetch("http://localhost:9001/watchListDb", options);
+    const response = await fetch("http://localhost:9000/watchListDb", options);
     const result = await response.json();
     return result;
   };
@@ -106,6 +139,8 @@ const WatchList = () => {
         abc={searchedCategory}
       />
       <WatchStocks onAddInput={onAddInputSymbol} watchlistData={filteredData} />
+    
+      
     </div>
   );
 };
@@ -113,25 +148,3 @@ const WatchList = () => {
 export default WatchList;
 
 //  Initital Post data
-//  if (allstockData?.length > 0) {
-//   postAllStocksScreenerData(allstockData)
-//   .then((response) => {
-//     console.log('Data posted successfully:', response);
-//   })
-//   .catch((error) => {
-//     console.error('Error posting data:', error);
-//   });
-// }
-
-// const postAllStocksScreenerData = async(allstockData) =>{
-//   const options = {
-//     method: "POST",
-//     body: JSON.stringify(allstockData),
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//   };
-//   const response = await fetch("http://localhost:9001/Stocks_Screener_data", options);
-//   const result = await response.json();
-//   return result;
-// }

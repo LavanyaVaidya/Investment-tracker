@@ -13,6 +13,7 @@ import Portfolio from './Frontend/Components/Portfolio/Portfolio'
 // import PrivateRoute from './Frontend/Components2/PrivateRoute';
 import Home2 from './Frontend/Components2/Home2';
 import NavBar from './Frontend/Components/Navbar/NavBar';
+import CandlestickChart from './Frontend/Components/StockChart/CandlestickChart';
 // import Navigate from 'react-router-dom'
 
 // const PrivateRouteComponent = ({ element, isLoggedIn }) => {
@@ -34,6 +35,7 @@ function App() {
         <Route path='/watchlist' element={<WatchList/>}/>
         <Route path='/portfolio' element={<Portfolio/>}/>
         <Route path="/welcome/:user" element={<Home2/>}/>
+        <Route path='/candlechart' element = {<CandlestickChart/>}/>
         {/* <Route
           path="/welcome"
           element={<PrivateRouteComponent element={<Home2 />} isLoggedIn={isLoggedIn} />}

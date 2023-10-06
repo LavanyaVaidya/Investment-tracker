@@ -1,19 +1,23 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState  } from 'react';
+import  {useLocation} from 'react-router-dom'
 import axios from 'axios';
 import Highcharts from 'highcharts/highstock';
 import CandlestickChartPresentation from './CandlestickChartPresentation';
 
-const CandlestickChart = ({ stockName }) => {
+
+const CandlestickChart = () => {
+
+  const location = useLocation();
+  const stockName = location.state;
+  console.log(stockName)
+
   const [containerOptions, setContainerOptions] = useState(null);
-  const [stockHistory, setStockHistory] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const response = await axios.get('http://localhost:4200/stockHistory');
-        const stockHistoricalData = response.data;
-        
-        const nameToFilter = `${stockName}`; // Replace with the name you want to filter
+        const nameToFilter = `${stockName}`; 
 
         const filteredData = response.data.filter(item => item.name === nameToFilter);
         if(filteredData.length === 0) {
@@ -107,7 +111,7 @@ const CandlestickChart = ({ stockName }) => {
   }, [stockName]);
 
   return (
-    <div className='gridGap'>
+    <div >
       <CandlestickChartPresentation
         Highcharts={Highcharts}
         containerOptions={containerOptions}

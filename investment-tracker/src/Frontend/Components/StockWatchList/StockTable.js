@@ -1,4 +1,8 @@
 import React from "react";
+import BarChartIcon from '@mui/icons-material/BarChart';
+import CandlestickChart from '../StockChart/CandlestickChart'
+import { Link } from "react-router-dom";
+
 
 
 const StockTable = ({watchlistData}) => {
@@ -12,6 +16,7 @@ const StockTable = ({watchlistData}) => {
             <th className="text-center">Volume</th>
             <th className="text-center">exchange</th>
             <th className="text-center">Category</th>
+            <th className="text-center">Analytics</th>
           </tr>
         </thead>
         <tbody>
@@ -32,6 +37,9 @@ const StockTable = ({watchlistData}) => {
                 </td>
                 <td className="text-center" data-label="Category">
                   {item.sector}
+                </td>
+                <td className="text-center" data-label="SYM">
+                   <Link to='/candlechart' state={item.symbol} > <BarChartIcon /> </Link>
                 </td>
               </tr>
             ))}
