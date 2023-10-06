@@ -4,8 +4,8 @@ import TotalPort from "./TotalPort";
 import PortfolioHead from "./PortfolioHead";
 import NavBar from "../Navbar/NavBar";
 
-const apikey = "?apikey=77f4427f83aa6fc8cb2033ca7f3d873d";
-const Base_Url = "https://financialmodelingprep.com/api/v3/quote-short/";
+// const apikey = "?apikey=77f4427f83aa6fc8cb2033ca7f3d873d";
+// const Base_Url = "https://financialmodelingprep.com/api/v3/quote-short/";
 
 const Portfolio = () => {
   const [portfolioData, setPortfolioData] = useState({});
@@ -13,69 +13,59 @@ const Portfolio = () => {
   const [investedPrice, setInvestedPrice] = useState(0);
   const [currentPrice, setCurrentPrice] = useState(0);
 
-  const [loading, setLoading] = useState(true);
 
-  // useEffect(()=>{
 
-  //   const getPortfoliolist = async()=>{
-  //    const data = await getPortfolioData();
-  //    setPortfolioData(data);
-  //   };
 
-  //   const getPortfolioListPrice = async()=>{
-  //     let temp = [];
-  //     for(let item in portfolioData)
-  //     {
-  //       const data =await getSymbolPrice(portfolioData[item].symbol)
-  //        console.log("fetch data: ", data);
-  //        temp.push(data[0]);
+  useEffect(() => {
+    const getPortfolioList = async () => {
+      const data = await getPortfolioData();
+      setPortfolioData(data);
+    };
 
-  //       // Task - add the two objects - I have to see what form data is coming
-  //      setHoldingData([...holdingData, data[0]]);
+    getPortfolioList();
 
-  //       setCurrentPrice(currentPrice+parseFloat(holdingData.price))
-  //       setInvestedPrice(investedPrice+parseFloat(holdingData.invested))
-  //       // Adding the invested Price and current price
-  //     }
-  //     console.log(holdingData);
-  //     // setHoldingData(temp);
-  //     // console.log("data" , holdingData);
-  //   }
-  //  getPortfoliolist();
-  //  getPortfolioListPrice();
+    // const getHoldings = async () => {
+    //   for (let item of portfolioData) {
+    //     // Task - Get The item.symbol Current price
+    //     // Task - to sum up the total invested Price
+    //     // Task - combine the object of PortfolioData and CurrentPrice 
 
-  // }, [])
+    //     // const data = await getSymbolPrice(item.symbol)
+    //     // console.log(data)
 
-  // // Get call to Portfolio
-  // const getPortfolioData = async () => {
+    //   }
+    // };
+
+    // getHoldings();
+
+  }, []);
+
+
+  const getPortfolioData = async () => {
+    try {
+      const response = await fetch("http://localhost:9000/portfolio");
+      if (!response.ok) {
+        throw new Error("Network response was not ok");
+      }
+      const jsonData = await response.json();
+      return jsonData;
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+
+  // const getSymbolPrice = async (symbol) => {
   //   try {
-  //     const response = await fetch('http://localhost:9000/portfolio');
+  //     const response = await fetch(`${}${symbol}`);
   //     if (!response.ok) {
-  //       throw new Error('Network response was not ok');
+  //       throw new Error("Network response was not ok");
   //     }
   //     const jsonData = await response.json();
   //     return jsonData;
   //   } catch (error) {
-  //     console.error('Error fetching data:', error);
-  //     setLoading(false)
+  //     console.error("Error fetching data:", error);
   //   }
   // };
-  // // Get call to Price
-  // // $/
-  // // 'p'
-  // // baseurl/appl
-  // const getSymbolPrice = async(symbol) =>{
-  //   try {
-  //     const response = await fetch(`${Base_Url}${symbol}${apikey}`);
-  //     if (!response.ok) {
-  //       throw new Error('Network response was not ok');
-  //     }
-  //     const jsonData = await response.json();
-  //     return jsonData;
-  //   } catch (error) {
-  //     console.error('Error fetching data:', error);
-  //   }
-  // }
 
   //  On Adding into form I am adding to the portfolio db.json
   const onAddInput = async (data) => {
@@ -91,46 +81,12 @@ const Portfolio = () => {
     return result;
   };
 
-  useEffect(() => {
-    async function getPortfolio() {
-      let data = await fetch("http://localhost:9000/portfolio");
-      data = await data.json();
-      console.log("data: ", data);
-      let len = data.length || 1;
-      let promises = [];
-      for (let i = 0; i < len; i++) {
-        promises.push(
-          (await fetch(`${Base_Url}${data[i]?.symbol}${apikey}`)).json()
-        );
-      }
-      let finalData = await Promise.all(promises);
-      let finalAns = [];
-      // let investTotal = 0;
-      // let currentTotal = 0 ;
-      finalData.forEach((doc, index) => {
-        console.log({ ...doc[0], ...data[index] });
-        // investTotal+= (data[index].invested)
-        // currentTotal+= (doc[0].invested)
-        finalAns.push({ ...doc[0], ...data[index] });
-      });
-      // console.log(investTotal);
-      // console.log(currentTotal)
-      setHoldingData(finalAns);
-      // setInvestedPrice(investTotal)
-      // setCurrentPrice(currentTotal)
-    }
-    getPortfolio();
-  }, []);
-
-  if (!loading) return false;
-
   return (
     <div className="portfolio">
-      {/* {holdingData.length}; */}
       <NavBar />
       <TotalPort investedPrice={investedPrice} currentPrice={currentPrice} />
-      <PortfolioHead onAddInput={onAddInput} TotalStocks={holdingData.length} />
-      <PortItems holdingData={holdingData} />
+      <PortfolioHead onAddInput={onAddInput} TotalStocks={portfolioData.length} />
+      <PortItems holdingData={portfolioData} />
     </div>
   );
 };
