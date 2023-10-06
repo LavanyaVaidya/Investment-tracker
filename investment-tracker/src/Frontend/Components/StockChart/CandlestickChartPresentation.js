@@ -15,3 +15,4 @@ const CandlestickChartPresentation = ({
 };
 
 export default CandlestickChartPresentation;
+

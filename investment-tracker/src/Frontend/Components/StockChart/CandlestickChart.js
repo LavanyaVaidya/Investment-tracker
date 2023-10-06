@@ -5,33 +5,22 @@ import CandlestickChartPresentation from './CandlestickChartPresentation';
 
 const CandlestickChart = ({ stockName }) => {
   const [containerOptions, setContainerOptions] = useState(null);
+  const [stockHistory, setStockHistory] = useState(null);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          'https://apidojo-yahoo-finance-v1.p.rapidapi.com/stock/v3/get-chart',
-          {
-            params: {
-              interval: '1mo',
-              symbol: `${stockName}`,
-              range: 'max',
-              region: 'US',
-              includePrePost: 'false',
-              useYfid: 'true',
-              includeAdjustedClose: 'true',
-              events: 'capitalGain,div,split',
-            },
-            headers: {
-              'X-RapidAPI-Key':
-                '27f0259ee1msh4deb4018f355c14p15bb58jsnfbc02b9c12c2',
-              'X-RapidAPI-Host':
-                'apidojo-yahoo-finance-v1.p.rapidapi.com',
-            },
-          }
-        );
+        const response = await axios.get('http://localhost:4200/stockHistory');
+        const stockHistoricalData = response.data;
+        
+        const nameToFilter = `${stockName}`; // Replace with the name you want to filter
 
-        const yahooData = response.data.chart.result[0];
+        const filteredData = response.data.filter(item => item.name === nameToFilter);
+        if(filteredData.length === 0) {
+          alert("Stock of this symbol doesn't exist");
+          return;
+        }
+        const yahooData = filteredData[0].chart.result[0];
 
         const candlestickData = yahooData.timestamp.map((timestamp, index) => ({
           x: timestamp * 1000,
