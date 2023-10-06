@@ -3,6 +3,7 @@ import PortItems from "./PortItems";
 import TotalPort from "./TotalPort";
 import PortfolioHead from "./PortfolioHead";
 import NavBar from "../Navbar/NavBar";
+import './Portfolio.css'
 
 // const apikey = "?apikey=77f4427f83aa6fc8cb2033ca7f3d873d";
 // const Base_Url = "https://financialmodelingprep.com/api/v3/quote-short/";

@@ -26,10 +26,7 @@ const options = ['MSFT', 'GOOGL', 'GOOG', 'AMAZON'];
         <span> Analytics</span>
       </div>
       <div className="portfolio_search">
-        
         <SearchableDropdown options={options}  className='input'/>
-
-        {/* <input type="text" /> */}
       </div>
       <div >
         <PortForm onAddInput={onAddInput} />
