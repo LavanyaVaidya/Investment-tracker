@@ -62,6 +62,9 @@ const Support = () => {
   return (
     <>
     <NavBar/>
+
+    {/*Display Accordian*/}
+
     <div className='gridGap text-muted'>
         <div>
             <h2 className='pb-5'>FAQ</h2>
@@ -69,6 +72,8 @@ const Support = () => {
         </div>
 
         <hr></hr>
+
+        {/*Form for handling questions*/}
 
         <div>
             <div  className='row text-start'>
@@ -103,6 +108,8 @@ const Support = () => {
         <hr></hr>
     
     </div>
+
+        {/*Form for handling feedback*/}
 
         <div className='pad' style={{textAlign: 'left'}}>
             <h2 className='pb-5 text-muted'>Feedback and Suggestions</h2>
