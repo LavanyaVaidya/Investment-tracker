@@ -13,6 +13,8 @@ const CandlestickChart = () => {
 
   const [containerOptions, setContainerOptions] = useState(null);
 
+  //Fetching the Historical stock data
+
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -25,6 +27,8 @@ const CandlestickChart = () => {
           return;
         }
         const yahooData = filteredData[0].chart.result[0];
+
+        //Data preparation for candlistick pattern
 
         const candlestickData = yahooData.timestamp.map((timestamp, index) => ({
           x: timestamp * 1000,
@@ -39,6 +43,8 @@ const CandlestickChart = () => {
               : 'red',
         }));
 
+        // Data preparation for volumn bars
+
         const volumeData = yahooData.timestamp.map((timestamp, index) => ({
           x: timestamp * 1000,
           y: yahooData.indicators.quote[0].volume[index],
@@ -47,6 +53,8 @@ const CandlestickChart = () => {
         const scrollbar = {
           enabled: true,
         };
+
+        //Setting the properties of containers which display candlistick and volumn data
 
         setContainerOptions({
           rangeSelector: {
