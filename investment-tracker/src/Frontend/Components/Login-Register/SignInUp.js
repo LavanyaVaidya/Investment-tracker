@@ -22,6 +22,26 @@ const SignInUp = () => {
   };
   const handleSignUp = async () => {
     try {
+      // Name validation: Only characters (letters)
+    const nameRegex = /^[A-Za-z]+$/;
+    if (!nameRegex.test(userData.name)) {
+      window.alert('Name should only contain characters (letters)');
+      return;
+    }
+
+       // Email format validation using a regular expression
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(userData.email)) {
+      console.error('Invalid email format');
+      window.alert('Invalid email format');
+      // Display an error message to the user, e.g., by updating state
+      return;
+    }
+     // Password length validation
+     if (userData.password.length <= 8) {
+      window.alert('Password is too weak. It should be more than 8 characters.');
+      return;
+    }
       const response = await fetch('http://localhost:3000/users', {
         method: 'POST',
         headers: {
@@ -63,6 +83,14 @@ const SignInUp = () => {
           const foundUser = responseData[0]; // Assuming the first user is found
   
           console.log('User logged in successfully');
+          window.alert('Successful registration');
+                      // Reset the form fields
+            setUserData({
+              name: '',
+              email: '',
+              password: '',
+            });
+
           setIsLoggedIn(true); // Set isLoggedIn to true
           // Navigate to Home2 when user is logged in
           navigate(`/welcome/${foundUser.name}`);
