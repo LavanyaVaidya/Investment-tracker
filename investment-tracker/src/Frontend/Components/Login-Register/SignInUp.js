@@ -52,6 +52,13 @@ const SignInUp = () => {
 
       if (response.ok) {
         console.log('User registered successfully');
+        window.alert('Successful registration');
+                      // Reset the form fields
+            setUserData({
+              name: '',
+              email: '',
+              password: '',
+            });
         // Navigate to the login page or perform any other action you want
       } else {
         const responseBody = await response.json();
@@ -83,13 +90,7 @@ const SignInUp = () => {
           const foundUser = responseData[0]; // Assuming the first user is found
   
           console.log('User logged in successfully');
-          window.alert('Successful registration');
-                      // Reset the form fields
-            setUserData({
-              name: '',
-              email: '',
-              password: '',
-            });
+          
 
           setIsLoggedIn(true); // Set isLoggedIn to true
           // Navigate to Home2 when user is logged in
