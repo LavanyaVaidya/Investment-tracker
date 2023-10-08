@@ -1,4 +1,0 @@
-[submodule "spring-boot-login-mongodb"]
-	path = spring-boot-login-mongodb
-	url = https://gitlab.stackroute.in/labulavanya/team6-investment-tracker-git
-	branch = mainV2
