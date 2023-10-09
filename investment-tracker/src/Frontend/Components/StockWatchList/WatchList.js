@@ -138,6 +138,7 @@ const WatchList = () => {
         setSearchedCategory={setSearchedCategory}
         abc={searchedCategory}
       />
+      <hr/>
       <WatchStocks onAddInput={onAddInputSymbol} watchlistData={filteredData} />
     
       

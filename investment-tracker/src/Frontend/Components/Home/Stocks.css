@@ -1,7 +1,4 @@
-/* .home_stocks_container{
-    
 
-} */
 .home_stocks_container>h1{
     color: #5f596e;
     font-size: 50px;
@@ -9,6 +6,9 @@
     line-height: 116.5%;
 }
 
+.home_stocks_container div{
+    margin-top: 60px;
+}
 .home_stocks{
     display: flex;
     justify-content: space-around;
