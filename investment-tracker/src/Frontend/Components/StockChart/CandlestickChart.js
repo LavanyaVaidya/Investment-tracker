@@ -28,7 +28,7 @@ const CandlestickChart = () => {
         }
         const yahooData = filteredData[0].chart.result[0];
 
-        //Data preparation for candlistick pattern
+        //Data preparation for candlestick pattern
 
         const candlestickData = yahooData.timestamp.map((timestamp, index) => ({
           x: timestamp * 1000,
