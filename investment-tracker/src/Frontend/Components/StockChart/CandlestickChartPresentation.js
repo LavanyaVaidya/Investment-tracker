@@ -1,6 +1,6 @@
 import React from 'react';
 import HighchartsReact from 'highcharts-react-official';
-import NavBar from '../Navbar/NavBar';
+import NavbarLogin from '../../Components2/NavbarLogin/NavbarLogin';
 
 const CandlestickChartPresentation = ({
   containerOptions,
@@ -8,7 +8,7 @@ const CandlestickChartPresentation = ({
 }) => {
   return (
     <>
-    <NavBar/>
+    <NavbarLogin/>
     <div className='gridGap mt-5 ' >
       
       {containerOptions && (

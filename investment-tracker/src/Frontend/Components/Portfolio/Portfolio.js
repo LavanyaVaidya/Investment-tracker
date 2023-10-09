@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import PortItems from "./PortItems";
 import TotalPort from "./TotalPort";
 import PortfolioHead from "./PortfolioHead";
-import NavBar from "../Navbar/NavBar";
+import NavbarLogin from "../../Components2/NavbarLogin/NavbarLogin";
+
 import './Portfolio.css'
 
 // const apikey = "?apikey=77f4427f83aa6fc8cb2033ca7f3d873d";
@@ -84,7 +85,7 @@ const Portfolio = () => {
 
   return (
     <div className="portfolio">
-      <NavBar />
+      <NavbarLogin/>
       <TotalPort investedPrice={investedPrice} currentPrice={currentPrice} />
       <PortfolioHead onAddInput={onAddInput} TotalStocks={portfolioData.length} />
       <PortItems holdingData={portfolioData} />

@@ -3,7 +3,7 @@ import "./WatchList.css";
 import WatchHead from "./WatchHead";
 import WatchCategory from "./WatchCategory";
 import WatchStocks from "./WatchStocks";
-import NavBar from "../Navbar/NavBar";
+import NavbarLogin from "../../Components2/NavbarLogin/NavbarLogin";
 
 
 
@@ -131,7 +131,7 @@ const WatchList = () => {
 
   return (
     <div className="watchList">
-      <NavBar />
+      <NavbarLogin/>
       <WatchHead />
       <WatchCategory
         filteredData={intialData.current}
