@@ -1,10 +1,13 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
-const path = require('path');
 
+const path = require('path');
+// Create a Set to store registered email addresses
+// const registeredEmails = new Set();
 const app = express();
 const port = 3000;
+
 
 // Enable CORS (Cross-Origin Resource Sharing)
 // Enable CORS (Cross-Origin Resource Sharing)
@@ -25,6 +28,11 @@ app.use(bodyParser.json());
 const dbFilePath = path.join(__dirname, 'db.json');
 let users = [];
 
+if (fs.existsSync(dbFilePath)) {
+  users = JSON.parse(fs.readFileSync(dbFilePath, 'utf8'));
+  users.forEach((user) => registeredEmails.add(user.email));
+}
+
 // Route to handle user registration (signup)
 app.post('/users', (req, res) => {
   try {
@@ -39,24 +47,19 @@ app.post('/users', (req, res) => {
       res.status(400).json({ message: 'All fields must be filled' });
       return;
     }
-    // if (!userData.name || !userData.email || !userData.password) {
-    //   alert('All fields must be filled');
-    //   return;
-    // }
     // Read existing user data from db.json using the absolute path
     users = JSON.parse(fs.readFileSync(dbFilePath, 'utf8'));
 
-    // Check if the email already exists
-    const existingUser = users.find((user) => user.email === req.body.email);
-    if (existingUser) {
-      res.status(409).json({ message: 'Email ID already exists, try logging in' });
-      return;
-    }
+// Check if the email already exists
+// if (registeredEmails.has(email)) {
+//   res.status(409).json({ message: 'Email ID already exists, try logging in' });
+//   return;
+// }
     // Add the new user to the array
     users.push(req.body);
-
-    // Write the updated user data back to db.json
-    fs.writeFileSync(dbFilePath, JSON.stringify(users, null, 2));
+    // registeredEmails.add(email);
+    // // Write the updated user data back to db.json
+    // fs.writeFileSync(dbFilePath, JSON.stringify(users, null, 2));
 
     res.status(200).json({ message: 'User registered successfully' });
   } catch (error) {
