@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import Home2 from '../../Components2/Home2';
 import NavBar from '../Navbar/NavBar';
 
+
 const SignInUp = () => {
   const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
@@ -42,7 +43,7 @@ const SignInUp = () => {
       window.alert('Password is too weak. It should be more than 8 characters.');
       return;
     }
-      const response = await fetch('http://localhost:3000/users', {
+      const response = await fetch('http://localhost:8084/addUser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -75,7 +76,7 @@ const SignInUp = () => {
   };
   const handleSignIn = async () => {
     try {
-      const response = await fetch(`http://localhost:3000/users?email=${userData.email}&password=${userData.password}`, {
+      const response = await fetch(`http://localhost:8084/getUsers?email=${userData.email}&password=${userData.password}`, {
         method: 'GET',
       });
   
