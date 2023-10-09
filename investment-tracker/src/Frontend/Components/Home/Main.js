@@ -2,10 +2,12 @@ import React from 'react'
 import './Main.css'
 import right from '../Images/main_image_right.png'
 import { Link } from 'react-router-dom'
+import { useState } from 'react'
 
 const Main = () => {
+  // const [isLoggedIn, setIsLoggedIn] = useState(false);
   return (
-
+    
     <div className='main'>
        <div className='main_content'>
        {/* style={{color:"#5F596E"}} */}
@@ -18,7 +20,7 @@ const Main = () => {
                </p>
               
                <Link to="/signup"> 
-          <button className='main_signup_btn'>Sign Up</button>
+          {/* {isLoggedIn? (''): (<button className='main_signup_btn'>Sign Up</button>)} */}
         </Link> 
            
        </div>

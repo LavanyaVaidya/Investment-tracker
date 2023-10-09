@@ -19,6 +19,18 @@
     {
       "symbol": "CME",
       "id": 5
+    },
+    {
+      "symbol": "aapl",
+      "id": 6
+    },
+    {
+      "symbol": "weq",
+      "id": 7
+    },
+    {
+      "symbol": "TAGS",
+      "id": 8
     }
   ],
   "portfolio": [
@@ -45,6 +57,12 @@
       "Quantity": "78",
       "symbol": "KPMG",
       "id": 4
+    },
+    {
+      "investedPrice": "27",
+      "Quantity": "5",
+      "symbol": "TAGS",
+      "id": 5
     }
   ],
   "Stocks_Screener_data": [
