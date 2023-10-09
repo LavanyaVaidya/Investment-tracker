@@ -6,6 +6,7 @@ import axios from 'axios';
 
 const Support = () => {
 
+
     const [questionData, setQuestionData] = useState({
         email: '',
         name: '',
@@ -36,7 +37,7 @@ const Support = () => {
         e.preventDefault();
         console.log(questionData);
         try {
-            await axios.post('http://localhost:4200/questions', questionData);
+            await axios.post('http://localhost:8081/questions', questionData);
             alert('Data saved successfully !');
             setQuestionData({email: '',name: '',question: '',})
         } catch (error) {
@@ -50,7 +51,7 @@ const Support = () => {
     const handleFeedbackSubmit = async (e) => {
         e.preventDefault();
         try {
-            await axios.post('http://localhost:4200/feedback', feedbackData);
+            await axios.post('http://localhost:8082/feedback', feedbackData);
             alert('Data saved successfully !');
             setFeedbackData({email: '',name: '',question: '',})
         } catch (error) {
