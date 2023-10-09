@@ -18,6 +18,9 @@ const Pricing = () => {
             </div>
         </div>
         <hr></hr>
+
+        {/*Price cards*/}
+
         <div className='container d-flex justify-content-center'>
             <div className='row gx-5'>
                 <div className="col-lg-6 py-5">
@@ -56,6 +59,9 @@ const Pricing = () => {
         </div>
         <hr></hr>
         <h3 className='text-muted'>Open An account now</h3>
+
+        {/*Signin Prompt button*/}
+        
         <div className='row'>
             <div className='col-ln-4'>
             <Link to="/signup">
