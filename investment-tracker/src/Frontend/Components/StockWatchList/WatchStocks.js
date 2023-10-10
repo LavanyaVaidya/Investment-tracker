@@ -1,13 +1,16 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./WatchStocks.css";
 import StockTable from "./StockTable";
 
-const WatchStocks = ({onAddInput, watchlistData}) => {
- console.log("watchlistData", watchlistData)
+const WatchStocks = ({onAddInput, watchlistData, onDelete}) => {
 
   const [displayForm, setDisplayForm] = useState(false);
   const [text, setText] = useState(''); 
 
+  useEffect(() => {
+    
+  }, [text])
+  
   
   const handleSubmit = (e) =>{
     e.preventDefault();
@@ -38,7 +41,6 @@ const WatchStocks = ({onAddInput, watchlistData}) => {
             <form onSubmit={handleSubmit}>
               <input
                 type="search"
-                // onChange={handleSearch}
                 value={text}
                 class="add_input form-control mb-4 relative flex-auto min-w-0 block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                 placeholder="Search"
@@ -51,9 +53,8 @@ const WatchStocks = ({onAddInput, watchlistData}) => {
             </form>
           )}
         </div>
-        
       </div>
-      <StockTable  watchlistData = {watchlistData}/>
+      <StockTable  watchlistData = {watchlistData} onDelete = {onDelete}/>
     </div>
   );
 };

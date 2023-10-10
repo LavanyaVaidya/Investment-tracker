@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./SearchableDropdown.css";
+import SearchIcon from "@mui/icons-material/Search";
 
 function SearchableDropdown({ options }) {
   const [searchTerm, setSearchTerm] = useState("");
@@ -20,6 +21,7 @@ function SearchableDropdown({ options }) {
 
   return (
     <div className="searchable_dropdown">
+      
       <input
         type="text"
         placeholder="Search..."

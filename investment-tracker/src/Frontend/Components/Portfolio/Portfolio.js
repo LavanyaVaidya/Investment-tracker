@@ -5,7 +5,7 @@ import PortfolioHead from "./PortfolioHead";
 import NavbarLogin from "../../Components2/NavbarLogin/NavbarLogin";
 
 import './Portfolio.css'
-
+import PortForm from "./PortForm";
 
 const Portfolio = () => {
   const [portfolioData, setPortfolioData] = useState({});
@@ -67,9 +67,11 @@ const Portfolio = () => {
   return (
     <div className="portfolio">
       <NavbarLogin/>
+      <PortForm onAddInput={onAddInput}  />
       <TotalPort data = {portfolioData} />
-      <PortfolioHead onAddInput={onAddInput} TotalStocks={portfolioData.length} />
+      <PortfolioHead  TotalStocks={portfolioData.length} portfolioData={portfolioData} />
       <PortItems holdingData={portfolioData} onDelete={onDelete} />
+   
     </div>
   );
 };

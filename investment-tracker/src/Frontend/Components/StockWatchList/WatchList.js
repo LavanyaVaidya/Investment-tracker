@@ -5,52 +5,17 @@ import WatchCategory from "./WatchCategory";
 import WatchStocks from "./WatchStocks";
 import NavbarLogin from "../../Components2/NavbarLogin/NavbarLogin";
 
-
-
-const apikey = "&apikey=77f4427f83aa6fc8cb2033ca7f3d873d";
-const Base_Url = "https://financialmodelingprep.com/api/v3/stock-screener?";
-
 const WatchList = () => {
   const [symbols, setSymbols] = useState(); 
-  const [allstockData, setAllStocksData] = useState(); // from external API
   const [inScreenerData, setInScreenerData] = useState();
   const [searchedCategory, setSearchedCategory] = useState(null);
   const [loading, setLoading] = useState(true);
   const [filteredData, setFilteredData] = useState([]);
 
   useEffect(() => {
-    const getWatchListSym = async () => {
-      const res = await getWatchListSymbols();
-      setSymbols(res);
-    };
-    getWatchListSym();
-
-
-    
-    // const getStocksDataList = async()=>{
-    //   const res = await getAllStocksData();
-    //   setAllStocksData(res);
-      
-    // }
-    // getStocksDataList();
-
-//      if (allstockData?.length > 0) {
-//   postAllStocksScreenerData(allstockData)
-//   .then((response) => {
-//     console.log('Data posted successfully:', response);
-//   })
-//   .catch((error) => {
-//     console.error('Error posting data:', error);
-//   });
-// }
-
-
-
-    const getStockScreenerDataList = async () => {
-      const res = await getStockScreenerData();
-      setInScreenerData(res);
-    };
-    getStockScreenerDataList();
+  
+    getWatchListSymbols();
+    getStockScreenerData();
 
   }, []);
 
@@ -59,58 +24,38 @@ const WatchList = () => {
   }, [inScreenerData]);
 
 
-
-// // POST If there is not data 
-//   const postAllStocksScreenerData = async(allstockData) =>{
-//   const options = {
-//     method: "POST",
-//     body: JSON.stringify(allstockData),
-//     headers: {
-//       "Content-Type": "application/json",
-//     },
-//   };
-//   const response = await fetch("http://localhost:9001/Stocks_Screener_data", options);
-//   const result = await response.json();
-//   console.log("HSON ", result)
-//   return result;
-// }
-
   const intialData = useRef([]);
 
   useEffect(() => {
     const searchByCategory = () => {
       const filterResult = intialData.current?.filter(
-        (inScreenItem) => inScreenItem.sector === searchedCategory
+        (inScreenItem) => inScreenItem.category === searchedCategory
       );
       setFilteredData(filterResult);
     };
     searchByCategory();
   }, [searchedCategory]);
 
-  const getDataOnLoad = () => {
-    const filterResult = inScreenerData?.filter((StockItem) => {
-      return symbols.find((item) => item.symbol === StockItem.symbol);
-    });
 
-    setFilteredData(filterResult);
-    intialData.current = filteredData;
+  const getDataOnLoad = () => {
+    setFilteredData(inScreenerData);
+    intialData.current = inScreenerData;
     setLoading(false);
   };
 
   const getStockScreenerData = async () => {
-    const response = await fetch("http://localhost:9000/Stocks_Screener_data");
-    const result = response.json();
+    const response = await fetch("http://localhost:8090/watchlist/data");
+    const result = await response.json();
+    setInScreenerData(result)
+    
     return result;
   };
 
-  // const getAllStocksData = async() =>{
-  //   const response = await fetch(`${Base_Url}${apikey}`);
-  //   const result = response.json();
-  //   return result;
-  // }
   const getWatchListSymbols = async () => {
-    const response = await fetch("http://localhost:9000/watchListDb");
-    const result = response.json();
+    const response = await fetch("http://localhost:8090/watchlist/symbol");
+    const result = await response.json();
+    setSymbols(result)
+     getStockScreenerData(); 
     return result;
   };
 
@@ -122,10 +67,26 @@ const WatchList = () => {
         "Content-Type": "application/json",
       },
     };
-    const response = await fetch("http://localhost:9000/watchListDb", options);
+    const response = await fetch("http://localhost:8090/watchlist/symbol", options);
     const result = await response.json();
+     getStockScreenerData(); 
     return result;
   };
+
+  const DeleteStock = async (stocksym) => {
+    const options = {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
+    const response = await fetch(`http://localhost:8090/watchlist/data/${stocksym}`,options);
+    if (!response.ok) {
+      alert("network Error ");
+    }
+    getStockScreenerData(); 
+  }
+
 
   if (loading) return;
 
@@ -136,10 +97,11 @@ const WatchList = () => {
       <WatchCategory
         filteredData={intialData.current}
         setSearchedCategory={setSearchedCategory}
-        abc={searchedCategory}
+        allcategory={searchedCategory}
       />
       <hr/>
-      <WatchStocks onAddInput={onAddInputSymbol} watchlistData={filteredData} />
+      <WatchStocks onAddInput={onAddInputSymbol} watchlistData={filteredData} 
+      onDelete={DeleteStock}/>
     
       
     </div>

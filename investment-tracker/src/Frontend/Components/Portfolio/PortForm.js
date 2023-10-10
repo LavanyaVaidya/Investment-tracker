@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import './PortForm.css'
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import Checklist from '../Images/Checklist.jpg'
 
 const PortForm = ({ onAddInput }) => {
   const [displayForm, setDisplayForm] = useState(false);
@@ -21,18 +22,25 @@ const PortForm = ({ onAddInput }) => {
     setSymbol("");
   };
 
+  const toggleForm = () => {
+    setDisplayForm(!displayForm); 
+  };
+
   return (
     <div className="portfolio_form">
       <div className="portfolio_add_form" 
-      onClick={() => setDisplayForm(!displayForm)}>
+      onClick={toggleForm}>
       <AddCircleOutlineIcon className="add_form_icon"/>
       <button >
-        {" "}
+       
         {displayForm ? "Close" : "AddStock"}
       </button>
       </div>
       <div className="portfolio_form_div">
       {displayForm && (
+      <div className="portfolio_form_img" >
+       <img src={Checklist} alt="checklist"></img>
+        
         <form
           className="addStock_Portfolio_form "
           onSubmit={submitForm}
@@ -68,8 +76,9 @@ const PortForm = ({ onAddInput }) => {
 
           <button type="submit">Submit</button>
         </form>
+        </div>
       )}
-      </div>
+     </div>
     </div>
   );
 };

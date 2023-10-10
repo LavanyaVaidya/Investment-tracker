@@ -4,13 +4,16 @@ import SearchableDropdown from './SearchableDropdown'
 import PortForm from "./PortForm";
 import QueueIcon from "@mui/icons-material/Queue";
 import ShowChartIcon from "@mui/icons-material/ShowChart";
-import SearchIcon from "@mui/icons-material/Search";
 
-
-const PortfolioHead = ({ onAddInput, TotalStocks }) => {
+const PortfolioHead = ({  TotalStocks , portfolioData}) => {
+  
 //  -> Price Fetching  
-const options = ['MSFT', 'GOOGL', 'GOOG', 'AMAZON'];
+const options = [];
+for(let i =0 ; i<portfolioData.length;i++){
+  options.push(portfolioData[i].symbol); 
+}
 
+console.log("oprtoiosm", options)
 
   return (
     <div className="portfolio_head">
@@ -26,11 +29,10 @@ const options = ['MSFT', 'GOOGL', 'GOOG', 'AMAZON'];
         <span> Analytics</span>
       </div>
       <div className="portfolio_search">
+         
         <SearchableDropdown options={options}  className='input'/>
       </div>
-      <div >
-        <PortForm onAddInput={onAddInput} />
-      </div>
+     
     </div>
   );
 };

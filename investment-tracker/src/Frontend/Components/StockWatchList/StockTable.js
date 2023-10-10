@@ -1,11 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import './StockTable.css'
 import BarChartIcon from '@mui/icons-material/BarChart';
-import CandlestickChart from '../StockChart/CandlestickChart'
+import DeleteIcon from '@mui/icons-material/Delete';
 import { Link } from "react-router-dom";
 
 
 
-const StockTable = ({watchlistData}) => {
+const StockTable = ({watchlistData, onDelete}) => {
+  
+  const [watchlistStocks, setWatchlistStocks] = useState(); 
+  useEffect(() => {
+    setWatchlistStocks(watchlistData);
+  }, [watchlistData]);
+
+  const handleClick = (stocksym) => {
+    onDelete(stocksym)
+  };
   return (
     <div className="stock_table">
       <table className="table align-middle mb-0 bg-white">
@@ -17,11 +27,12 @@ const StockTable = ({watchlistData}) => {
             <th className="text-center">exchange</th>
             <th className="text-center">Category</th>
             <th className="text-center">Analytics</th>
+            <th className="text-center">Remove</th>
           </tr>
         </thead>
         <tbody>
-        {watchlistData?.length > 0 &&
-            watchlistData.map((item, index) => (
+        {watchlistStocks?.length > 0 &&
+            watchlistStocks?.map((item, index) => (
               <tr key={index}>
                 <td className="text-center" data-label="SYM">
                   {item.symbol}
@@ -33,14 +44,16 @@ const StockTable = ({watchlistData}) => {
                   {item.volume}
                 </td>
                 <td className="text-center" data-label="Change(1D)">
-                  {item.exchangeShortName}
+                  {item.exchange}
                 </td>
                 <td className="text-center" data-label="Category">
-                  {item.sector}
+                  {item.category}
                 </td>
                 <td className="text-center" data-label="SYM">
                    <Link to='/candlechart' state={item.symbol} > <BarChartIcon /> </Link>
                 </td>
+                <td className="text-center delete_stockitem_watchlist"><DeleteIcon
+                onClick={() => handleClick(item.symbol)}/></td>
               </tr>
             ))}
         </tbody>

@@ -2,29 +2,27 @@
 .portfolio_form {
   height: fit-content;
   padding: 5px;
-
 }
 
 .portfolio_add_form{
   border-radius: 12px;
   background-color: #ebe4eb;
-  width:164px;
+  width:144px;
   text-align: center;
   float: right;
+  margin-right: 40px;
 }
 .portfolio_add_form button{
   border: none;
    background-color: inherit;
    color: inherit;
    font-size: 22px;
-   padding: 8px;
+   padding: 7px;
+   
 
 }
-.portfolio_form_div{
-  margin-top: 40px;
-  padding: 10px 20px;
-  border-radius: 8px;
-}
+
+
 .portfolio_add_form:hover
 , .portfolio_add_form button:hover
 ,  .add_form_icon:hover {
@@ -32,7 +30,7 @@
   color: black;
 }
 
-.portfolio_form_div input[type="text"] {
+.portfolio_form_img input[type="text"] {
   background: rgba(255, 255, 255, 0.1);
   border: none;
   border-radius: 10px;
@@ -53,7 +51,22 @@
   text-align: center;
   width: 100%;
 }
+.portfolio_form_img{
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
 
+}
+.portfolio_form_img img{
+  max-width: 50%;
+  max-height: 40%;
+  object-fit: cover;
+}
 
   
-  
+  .portfolio_form_img form{
+ 
+    margin-top: 50px;
+  }
