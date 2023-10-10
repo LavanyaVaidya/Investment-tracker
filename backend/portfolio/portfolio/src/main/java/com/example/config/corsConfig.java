@@ -15,7 +15,7 @@ public class corsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/portfolio")
-                        .allowedOrigins("http://localhost:3000")
+                        .allowedOrigins("http://localhost:3002")
                         .allowedMethods("GET","POST","DELETE");
             }
         };

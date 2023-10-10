@@ -5,6 +5,7 @@ import esg1 from '../Images/ESG-1.jpg';
 import esg2 from '../Images/ESG-2.png';
 import esg3 from '../Images/ESG-3.jpg';
 import NavBar from '../Navbar/NavBar'
+import NavbarLogin from '../../Components2/NavbarLogin/NavbarLogin';
 
 
 const Learn = () => {

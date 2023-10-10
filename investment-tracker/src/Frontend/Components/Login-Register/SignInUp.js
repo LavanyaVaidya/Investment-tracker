@@ -146,20 +146,20 @@ const SignInUp = () => {
                 onClick={handleSignIn}
                 data-testid="signIn"
               >
-                Sign In
+                Login
               </button>
             </div>
             <div className="sub-cont">
               <div className="img">
                 <div className="img__text m--up">
-                  <h3>Don't have an account? Please Sign up!</h3>
+                  <h3>Don't have an account? Please Register!</h3>
                 </div>
                 <div className="img__text m--in">
-                  <h3>If you already have an account, just sign in.</h3>
+                  <h3>If you already have an account, just login.</h3>
                 </div>
                 <div className="img__btn" onClick={toggleSignUp}>
-                  <span className="m--up">Sign Up</span>
-                  <span className="m--in">Sign In</span>
+                  <span className="m--up">Register</span>
+                  <span className="m--in">Login</span>
                 </div>
               </div>
               <div className="form sign-up">
@@ -203,7 +203,7 @@ const SignInUp = () => {
                   onClick={handleSignUp}
                   data-testid="signUp"
                 >
-                  Sign Up
+                  Register
                 </button>
               </div>
             </div>

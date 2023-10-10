@@ -22,7 +22,7 @@ import java.util.stream.Collectors;
 
 
 @RestController
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "http://localhost:3002")
 @RequestMapping("/portfolio")
 public class portfolioController {
     @Autowired
@@ -39,10 +39,10 @@ public class portfolioController {
     }
 
     @PostMapping("/data")
-    public ResponseEntity<String> postPortfolioData(@RequestBody List<portfolioData> dataList) {
+    public ResponseEntity<String> postPortfolioData(@RequestBody portfolioData dataList) {
         try {
-            List<portfolioData> savedDataList = portfolioDataRepository.saveAll(dataList);
-            return ResponseEntity.ok(savedDataList.size() + " portfolio data items have been saved.");
+            portfolioData savedDataList = portfolioDataRepository.save(dataList);
+            return ResponseEntity.ok(" portfolio data items have been saved.");
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to save portfolio data.");
         }

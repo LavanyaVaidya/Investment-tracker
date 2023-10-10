@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './sidebar.scss';
+import {useParams} from 'react-router-dom'
 
 const sidebarNavItems = [
     {
@@ -30,7 +31,7 @@ const sidebarNavItems = [
     {
         display: 'Logout',
         icon: <i className='bx bx-receipt'></i>,
-        // to: '/order',
+        to: '/',
         // section: 'order'
     },
 ]
