@@ -115,9 +115,11 @@ const SignInUp = () => {
           <div className={`cont ${isSignUp ? 's--signup' : ''}`}>
             <div className="form sign-in">
               <h2 className="myh2">Welcome</h2>
-              <label className='lb1'>
+              <label className='lb1' htmlFor="emailInputSignIn" data-testid='email-signin'>
                 <span className='lbs'>Email</span>
                 <input
+                 data-testid='email-value-signin'
+                 id='emailInputSignIn'
                   type="email"
                   className="signinupInput"
                   name="email"
@@ -125,9 +127,11 @@ const SignInUp = () => {
                   onChange={handleChange}
                 />
               </label>
-              <label className='lb1'>
+              <label className='lb1' htmlFor="passwordInputSignIn" data-testid='password-signin'>
                 <span className='lbs'>Password</span>
                 <input
+                 data-testid='password-value-signin'
+                 id='passwordInputSignIn'
                   type="password"
                   className="signinupInput"
                   name="password"
@@ -140,6 +144,7 @@ const SignInUp = () => {
                 type="button"
                 className="signinupsubmit"
                 onClick={handleSignIn}
+                data-testid="signIn"
               >
                 Sign In
               </button>
@@ -159,9 +164,10 @@ const SignInUp = () => {
               </div>
               <div className="form sign-up">
                 <h2 className="myh2">Create your Account</h2>
-                <label className='lb1'>
+                <label className='lb1' htmlFor='nameInput' data-testid='name-signup'>
                   <span className='lbs'>Name</span>
                   <input
+                   id='nameInput'
                     type="text"
                     name="name"
                     value={userData.name}
@@ -169,9 +175,10 @@ const SignInUp = () => {
                     className="signinupInput"
                   />
                 </label>
-                <label className='lb1'>
+                <label className='lb1' htmlFor='emailInput' data-testid='email-signup'>
                   <span className='lbs'>Email</span>
                   <input
+                  id='emailInput'
                     type="email"
                     name="email"
                     value={userData.email}
@@ -179,9 +186,10 @@ const SignInUp = () => {
                     className="signinupInput"
                   />
                 </label>
-                <label className='lb1'>
+                <label className='lb1' htmlFor='passwordInput' data-testid='password-signup'>
                   <span className='lbs'>Password</span>
                   <input
+                  id='passwordInput'
                     type="password"
                     name="password"
                     value={userData.password}
@@ -193,6 +201,7 @@ const SignInUp = () => {
                   type="button"
                   className="signinupsubmit"
                   onClick={handleSignUp}
+                  data-testid="signUp"
                 >
                   Sign Up
                 </button>
