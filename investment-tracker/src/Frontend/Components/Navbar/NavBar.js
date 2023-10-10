@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
-import {Link} from 'react-router-dom'
+import {Link,useLocation} from 'react-router-dom'
 
 
 
@@ -14,6 +14,8 @@ const NavBar = () => {
   const toggleNavbar = () => {
     setExpanded(!expanded);
   };
+
+  const location=useLocation();
   
   return (
     <div>
@@ -33,9 +35,16 @@ const NavBar = () => {
                 </button>
             <div className="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
                 <ul className="navbar-nav">
+                {location.pathname !== '/signup' && (
                     <li className="nav-item">
                         <Link className="nav-link" to="/signup">Login/Register</Link>
                     </li>
+                )}
+                {location.pathname === '/signup' && (
+                    <li className="nav-item">
+                        <Link className="nav-link" to="/">Home</Link>
+                    </li>
+                )}
                     <li className="nav-item">
                         <Link className="nav-link" to="/learn">Learn</Link>
                     </li>
