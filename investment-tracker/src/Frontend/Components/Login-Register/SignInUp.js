@@ -6,6 +6,7 @@ import NavBar from '../Navbar/NavBar';
 
 
 const SignInUp = () => {
+  const token='eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJtdnRrIiwiZXhwIjoxNjk2OTgyODMwLCJpYXQiOjE2OTY5NDY4MzB9.w8b-g_cxJD2BiIqfHgRubbDQy9sHBXwZ5A8336prsGw';
   const navigate = useNavigate();
   const [isSignUp, setIsSignUp] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -13,7 +14,7 @@ const SignInUp = () => {
     setIsSignUp(!isSignUp);
   };
   const [userData, setUserData] = useState({
-    name: '',
+    userName: '',
     email: '',
     password: '',
   });
@@ -21,11 +22,12 @@ const SignInUp = () => {
     const { name, value } = e.target;
     setUserData({ ...userData, [name]: value });
   };
+
   const handleSignUp = async () => {
     try {
       // Name validation: Only characters (letters)
     const nameRegex = /^[A-Za-z]+$/;
-    if (!nameRegex.test(userData.name)) {
+    if (!nameRegex.test(userData.userName)) {
       window.alert('Name should only contain characters (letters)');
       return;
     }
@@ -42,15 +44,18 @@ const SignInUp = () => {
      if (userData.password.length <= 8) {
       window.alert('Password is too weak. It should be more than 8 characters.');
       return;
-    }
+    }     
+
       const response = await fetch('http://localhost:8084/addUser', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(userData),
       });
 
+  
       if (response.ok) {
         console.log('User registered successfully');
         window.alert('Successful registration');
@@ -74,34 +79,96 @@ const SignInUp = () => {
       console.error('Error:', error);
     }
   };
+
+ 
+
+  // Function to fetch data from an authenticated API endpoint
+// async function fetchData() {
+//   // Get the JWT token from local storage (or wherever you stored it)
+//   const token = localStorage.getItem('jwtToken');
+
+//   // Define headers with the token
+//   const headers = {
+//     Authorization: `Bearer ${token}`,
+//     'Content-Type': 'application/json',
+//   }};
+
+//   try {
+//     // Send a GET request to your API endpoint
+//     const response = await fetch('http://example.com/api/protected-resource', {
+//       method: 'GET',
+//       headers: headers,
+//     });
+
+//     if (response.ok) {
+//       // Handle a successful response here
+//       const data = await response.json();
+//       console.log('Data:', data);
+//     } else {
+//       // Handle errors here (e.g., 401 Unauthorized)
+//       console.error('API Request Failed:', response.statusText);
+//     }
+//   } catch (error) {
+//     console.error('Error:', error);
+//   }
+// }
+
+// // Call the fetchData function when you need to fetch data
+// fetchData();
+
+// Usage example:
+// const response = await customFetch('http://your-api-endpoint.com/some-resource', {
+//   method: 'GET',
+// });
+
+// Now the JWT token will be included in the request headers
+  
   const handleSignIn = async () => {
     try {
-      const response = await fetch(`http://localhost:8084/getUsers?email=${userData.email}&password=${userData.password}`, {
+       const response = await fetch(`http://localhost:8084/getUsers?email=${userData.email}&password=${userData.password}`, {
         method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        }
       });
-  
       console.log(response);
-  
+      if (!response.ok) {
+        console.error(`Request failed with status ${response.status}`);
+        // Log the response text if needed: console.error(await response.text());
+      }
       if (response.ok) {
+        // const { token, username } = tokenData; // Assuming your response has a 'token' field
+  
+        // if (token && username) {
+        // // Store the JWT token in local storage
+        // localStorage.setItem('jwtToken', token);
+
+      // console.log(response);
+  
+      // if (response.ok) {
         const responseData = await response.json();
         console.log('Response:', responseData);
   
         // Check if the response is an array of users
         if (Array.isArray(responseData) && responseData.length > 0) {
           const foundUser = responseData[0]; // Assuming the first user is found
-  
+        
           console.log('User logged in successfully');
           
 
           setIsLoggedIn(true); // Set isLoggedIn to true
           // Navigate to Home2 when user is logged in
-          navigate(`/welcome/${foundUser.name}`);
+          // navigate(`/welcome/${foundUser.userName}`);
+          navigate(`/welcome/${foundUser.userName}`);
         } else {
-          console.error('User login failed');
+          console.error('Token or username not provided in response.');
         }
       } else {
-        console.error('User login failed');
-      }
+        console.error('User login failed');}
+      // } else {
+      //   console.error('User login failed');
+      // }
     } catch (error) {
       console.error('Error: ', error);
     }
@@ -144,6 +211,7 @@ const SignInUp = () => {
                 type="button"
                 className="signinupsubmit"
                 onClick={handleSignIn}
+            
                 data-testid="signIn"
               >
                 Login
@@ -165,12 +233,12 @@ const SignInUp = () => {
               <div className="form sign-up">
                 <h2 className="myh2">Create your Account</h2>
                 <label className='lb1' htmlFor='nameInput' data-testid='name-signup'>
-                  <span className='lbs'>Name</span>
+                  <span className='lbs'> Name</span>
                   <input
                    id='nameInput'
                     type="text"
-                    name="name"
-                    value={userData.name}
+                    name="userName"
+                    value={userData.userName}
                     onChange={handleChange}
                     className="signinupInput"
                   />

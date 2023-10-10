@@ -6,7 +6,15 @@
 // // Create a Set to store registered email addresses
 // // const registeredEmails = new Set();
 // const app = express();
+// // const port = 8084;
+// const express = require('express');
+// const bodyParser = require('body-parser');
+// const cors = require('cors'); // Import the cors middleware
+// const app = express();
 // const port = 8084;
+
+// // Enable CORS middleware
+// app.use(cors());
 
 
 // Enable CORS (Cross-Origin Resource Sharing)
@@ -19,7 +27,30 @@ app.use((req, res, next) => {
   next();
 });
 
+// app.listen(port, () => {
+//   console.log(`Server is running on port ${port}`);
+// });
 
+  // const customFetch = async (url, options = {}) => {
+  //   const token = localStorage.getItem('jwtToken');
+
+  //   if (token) {
+  //     if (!options.headers) {
+  //       options.headers = {};
+  //     }
+
+  //     options.headers.Authorization = `Bearer ${token}`;
+  //   }
+
+  //   const response = await fetch(url, options);
+
+  //   if (!response.ok) {
+  //     // Handle unauthorized or other error responses here
+  //     console.error(`Error: ${response.status} - ${response.statusText}`);
+  //   }
+
+  //   return response;
+  // };
 // // Middleware for parsing JSON requests
 // app.use(bodyParser.json());
 
