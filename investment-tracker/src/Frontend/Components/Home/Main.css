@@ -4,10 +4,11 @@
   height: auto;
   display: flex;
   justify-content: space-around;
-  margin:70px 0 40px 0;
+  margin:100px 0 40px 0;
 }
 
 .main_content {
+  margin-top: 80px;
   padding-top: 80px;
   color: #5f596e;
 }

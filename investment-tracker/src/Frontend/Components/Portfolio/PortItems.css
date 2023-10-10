@@ -49,3 +49,7 @@
 .right_items{
   text-align: right;
 }
+.stock_delete_btn_tbl:hover{
+    color: #9b9b9b;
+    cursor: pointer;
+}

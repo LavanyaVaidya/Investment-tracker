@@ -1,12 +1,19 @@
 import React, { useEffect, useState } from "react";
 import "./PortItems.css";
+import DeleteIcon from '@mui/icons-material/Delete';
 
 const PortItems = (props) => {
   const [holdingData, setHoldingData] = useState([]);
 
+
   useEffect(() => {
     setHoldingData(props.holdingData);
   }, [props.holdingData]);
+
+
+  const handleClick = (stocksym) => {
+    props.onDelete(stocksym)
+  };
 
   return (
     <div className="port_items">
@@ -31,6 +38,9 @@ const PortItems = (props) => {
             <th className="net_change_percent right sortable">
               <span>%Change</span>
             </th>
+            <th className="net_change_percent right sortable">
+             <span>Remove</span>
+            </th>
           </tr>
         </thead>
         <tbody>
@@ -43,7 +53,7 @@ const PortItems = (props) => {
                       <span>{stockItem.symbol}</span>
                     </td>
                     <td className="right_items qty">
-                      <span>{stockItem.Quantity}</span>
+                      <span>{stockItem.quantity}</span>
                     </td>
                     <td className="right_items">
                       <span>{stockItem.investedPrice}</span>
@@ -52,7 +62,7 @@ const PortItems = (props) => {
                       <span>{stockItem.price}</span>
                     </td>
                     <td className="right_items">
-                      <span>{stockItem.price * stockItem.Quantity}</span>
+                      <span>{stockItem.price * stockItem.quantity}</span>
                     </td>
                     <td className="right_items">
                       <span>
@@ -64,17 +74,14 @@ const PortItems = (props) => {
                         %
                       </span>
                     </td>
+                    <td className="right_items stock_delete_btn_tbl">
+                      <span><DeleteIcon  onClick={() => handleClick(stockItem.symbol)}/></span>
+                    </td>
                   </tr>
                 </>
               );
               // }
             })}
-          {/* {holdingData.length>0 && holdingData.map((stockItem) => {
-          if(stockItem?.price?.length)
-          return 
-           
-        })
-          } */}
         </tbody>
       </table>
     </div>

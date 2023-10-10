@@ -5,17 +5,17 @@ import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 const PortForm = ({ onAddInput }) => {
   const [displayForm, setDisplayForm] = useState(false);
   const [investedPrice, setInvestedPrice] = useState();
-  const [Quantity, setQuantity] = useState();
+  const [quantity, setQuantity] = useState();
   const [symbol, setSymbol] = useState();
 
   const submitForm = (e) => {
     e.preventDefault();
-    //  Task - Add Number Validations and all -> and also Listed shares will be shown 
-    if (!symbol || !Quantity || !investedPrice) {
+
+    if (!symbol || !quantity || !investedPrice) {
       alert("Enter a valid input");
       return;
     }
-    onAddInput({investedPrice, Quantity, symbol});
+    onAddInput({investedPrice, quantity, symbol});
     setInvestedPrice("");
     setQuantity("");
     setSymbol("");
@@ -51,7 +51,7 @@ const PortForm = ({ onAddInput }) => {
             <label> Quantity </label>
             <input
               type="text"
-              value={Quantity}
+              value={quantity}
               placeholder="number of shares"
               onChange={(e) => setQuantity(e.target.value)}
             />

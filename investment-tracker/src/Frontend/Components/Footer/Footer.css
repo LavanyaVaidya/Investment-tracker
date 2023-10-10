@@ -15,7 +15,7 @@ footer{
   margin: 20px;
   width: 280.545px;
   height: 324.741px;
-  padding: 20px;
+  padding: 30px;
   border-radius: 14px;
   text-align: center;
   color: #FFF;
@@ -24,6 +24,7 @@ footer{
 
 }
 .card-footer>h2{
+  padding: 8px;
 text-align: center;
 font-family: Myanmar Khyay;
 font-size: 34px;
@@ -37,7 +38,7 @@ font-size: 17px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
-/* overflow: hidden; */
+overflow: hidden;
 height: 120px;
 overflow: hidden;
 
@@ -48,6 +49,7 @@ overflow: hidden;
   color: #5f596e;
   border: 2px solid white;
   border-radius: 4px;
+  margin-top: 0px;
 }
 .btn-footer:hover{
   cursor: pointer;
@@ -58,8 +60,9 @@ overflow: hidden;
   text-align: center;
 }
 .social_media{
+  
   display: flex;
-  justify-content: space-evenly;
+  justify-content:space-evenly;
   margin: 20px;
   margin-bottom: -20px;
 }

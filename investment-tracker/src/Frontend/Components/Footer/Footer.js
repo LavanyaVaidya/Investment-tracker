@@ -44,11 +44,13 @@ const Footer = () => {
          <MyModal showModal={showModal} handleCloseModal={handleCloseModal} />
       </div>
 
-      <div className=' card-footer Target'>
+      <div className='card-footer Target'>
         {<TrackChangesIcon/>}
-      <h2>Sponsered By</h2>
-         <div><h2>Natwest</h2>
-         </div>
+     
+         
+         <h2>Sponsered</h2>
+         <p> Natwest Group has Sponsered this website to  
+         </p>
          <button className='btn-footer' onClick={handleButtonClick}>More</button>
       </div>
 
@@ -82,6 +84,7 @@ const Footer = () => {
        <span><YouTubeIcon/></span>
        <span><TelegramIcon/></span>
      </div>
+
     </div>
     </footer>
   )
