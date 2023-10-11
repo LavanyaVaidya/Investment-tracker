@@ -18,7 +18,7 @@ const CandlestickChart = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:8083/stockHistory');
+        const response = await axios.get('http://localhost:8080/stockHistory');
         const nameToFilter = `${stockName}`; 
 
         const filteredData = response.data.filter(item => item.name === nameToFilter);

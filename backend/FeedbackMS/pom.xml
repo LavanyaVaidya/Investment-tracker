@@ -12,7 +12,7 @@
 	<artifactId>FeedbackMS</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>FeedbackMS</name>
-	<description>MicroService for taking questions</description>
+	<description>MicroService for taking question</description>
 	<properties>
 		<java.version>17</java.version>
 	</properties>
@@ -25,7 +25,6 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
-		<!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-netflix-eureka-client -->
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
