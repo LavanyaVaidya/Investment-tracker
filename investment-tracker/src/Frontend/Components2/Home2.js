@@ -15,7 +15,7 @@ const Home2 = () => {
     <div>
       <NavbarLogin heading={navHeading}/>
       <h2> Hello guys</h2>
-        <Welcome></Welcome>   
+        {/* <Welcome></Welcome>    */}
         
         <Main />
         <Stocks/>

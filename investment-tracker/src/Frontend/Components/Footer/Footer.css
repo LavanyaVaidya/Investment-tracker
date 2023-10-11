@@ -11,7 +11,7 @@ footer{
   flex-wrap: wrap;
 }
 
-.card-footer{
+.card-footer-home{
   margin: 20px;
   width: 280.545px;
   height: 324.741px;
@@ -23,7 +23,7 @@ footer{
   background-color:   #ddc1f91a;
 
 }
-.card-footer>h2{
+.card-footer-home>h2{
   padding: 8px;
 text-align: center;
 font-family: Myanmar Khyay;
@@ -32,7 +32,7 @@ font-style: normal;
 font-weight: 400;
 line-height: normal;
 }
-.card-footer>p{
+.card-footer-home>p{
 font-family: Myanmar Khyay;
 font-size: 17px;
 font-style: normal;

@@ -4,10 +4,12 @@
     font-size: 50px;
     font-weight: 700;
     line-height: 116.5%;
+    text-align: center;
 }
 
 .home_stocks_container div{
     margin-top: 60px;
+    text-align: center;
 }
 .home_stocks{
     display: flex;
