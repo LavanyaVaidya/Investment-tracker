@@ -47,7 +47,7 @@
   "scripts": {
     "start": "react-scripts start --port 3002",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "server": "json-server --watch db.json --port 9000"
   },
@@ -70,6 +70,9 @@
     ]
   },
   "devDependencies": {
+    "@babel/core": "^7.23.0",
+    "@babel/preset-env": "^7.22.20",
+    "babel-jest": "^29.7.0",
     "sass": "^1.68.0"
   }
 }
