@@ -32,7 +32,7 @@ const Footer = () => {
     <footer>
     <div className='footer'>
      
-      <div className='card-footer Privacy'>
+      <div className='card-footer-home Privacy'>
         {/* icon , Heading , paragraph button 
          */}
          {<SecurityIcon/>}
@@ -44,17 +44,17 @@ const Footer = () => {
          <MyModal showModal={showModal} handleCloseModal={handleCloseModal} />
       </div>
 
-      <div className='card-footer Target'>
+      <div className='card-footer-home Target'>
         {<TrackChangesIcon/>}
      
          
-         <h2>Sponsered</h2>
+         <h2>Sponsored</h2>
          <p> Natwest Group has Sponsered this website to  
          </p>
          <button className='btn-footer' onClick={handleButtonClick}>More</button>
       </div>
 
-      <div className='card-footer ContactUs '>
+      <div className='card-footer-home ContactUs '>
         {<ContactMailIcon/>}
       <h2>ContactUs</h2>
          <p> If you have any questions, please don't hesitate to contact us. 
@@ -62,7 +62,7 @@ const Footer = () => {
          <Link to='/support'><button className='btn-footer'>More</button></Link>
       </div>
 
-      <div className='card-footer FeedBack'>
+      <div className='card-footer-home'>
        { <FeedbackIcon/>}
          <h2>FeedBack</h2>
          <p>Have a question ? Ask our experts. We would love to solve any query and

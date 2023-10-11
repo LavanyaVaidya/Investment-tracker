@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './learn.css'
 import esg_image from '../Images/esg_image.jpg'
 import esg1 from '../Images/ESG-1.jpg';
@@ -9,9 +9,14 @@ import NavbarLogin from '../../Components2/NavbarLogin/NavbarLogin';
 
 
 const Learn = () => {
+  const [display,setdisplay]=useState(false);
+  const toggle=()=>{
+    setdisplay(!display);
+  }
   return (
     <>
-    <NavBar/>
+
+    {display?(<NavbarLogin/>):(<NavBar/>)}
     <div className='container'>
       <div className='container-main'>
         <div className='container-data d-flex flex-md-row flex-column justify-content-space-around'>
