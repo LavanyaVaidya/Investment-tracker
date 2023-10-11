@@ -6,15 +6,25 @@ import { faQuestionCircle } from '@fortawesome/free-regular-svg-icons';
 import { faTimesCircle } from '@fortawesome/free-regular-svg-icons';
 import {Link} from 'react-router-dom'
 import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
-import {useRef, useEffect} from 'react'
-import AppLayout from '../Side-bar/layout/AppLayout'
+import {useRef, useEffect} from 'react';
+import SidebarMain from '../Side-bar/components/SidebarMain';
+
+
 
 const NavbarLogin= ({heading}) => {
+  
+  // const [isSidebarVisible,setSidebarVisible]=useState(false);
+  // const sidebarLayoutRef=useRef(null);
+  // const toggleSidebarLayout=()=>{
+  //   setSidebarVisible(!isSidebarLayoutVisible);
+  // }
+
     const [expanded, setExpanded] = useState(false);
 
   const toggleNavbar = () => {
     setExpanded(!expanded);
   };
+  
   const [isAppLayoutVisible,setAppLayoutVisible]=useState(false);
   const appLayoutRef=useRef(null);
   const toggleAppLayout=()=>{
@@ -63,7 +73,7 @@ const NavbarLogin= ({heading}) => {
                     </li>   
                     <li className="nav-item">
                         <FontAwesomeIcon className="nav-link" icon={faUserCircle} onClick={toggleAppLayout}/>
-                        {isAppLayoutVisible && <div ref={appLayoutRef}><AppLayout/></div>}
+                        {isAppLayoutVisible && <div ref={appLayoutRef}><SidebarMain issidebar={isAppLayoutVisible} /></div>}
                     </li>
                 </ul>
             </div>
