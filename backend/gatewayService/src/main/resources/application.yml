@@ -22,6 +22,16 @@ spring:
           predicates:
             - Path=/stockHistory/**
 
+        - id: portfolio-service
+          uri: lb://PORTFOLIO-SERVICE
+          predicates:
+            - Path=/portfolio/**
+
+        - id: watchlist-service
+          uri: lb://watchlist
+          predicates:
+            - Path=/watchlist/**
+
 
 eureka:
   client:

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@CrossOrigin(origins = "http://localhost:*")
+@CrossOrigin(origins = "http://localhost:3002")
 @RequestMapping("/stockHistory")
 public class StockHistoryController {
 
