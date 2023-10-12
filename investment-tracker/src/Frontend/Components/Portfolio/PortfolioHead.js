@@ -13,8 +13,6 @@ for(let i =0 ; i<portfolioData.length;i++){
   options.push(portfolioData[i].symbol); 
 }
 
-console.log("oprtoiosm", options)
-
   return (
     <div className="portfolio_head">
       <div className="holding_">

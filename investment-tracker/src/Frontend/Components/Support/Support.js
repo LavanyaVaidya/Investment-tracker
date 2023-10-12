@@ -37,7 +37,7 @@ const Support = () => {
         e.preventDefault();
         console.log(questionData);
         try {
-            await axios.post('http://localhost:8080/questions', questionData);
+            await axios.post('http://localhost:8081/questions', questionData);
             alert('Data saved successfully !');
             setQuestionData({email: '',name: '',question: '',})
         } catch (error) {

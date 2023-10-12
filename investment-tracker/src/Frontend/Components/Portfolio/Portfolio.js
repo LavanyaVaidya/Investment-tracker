@@ -16,7 +16,7 @@ const Portfolio = () => {
 
   const getPortfolioData = async () => {
     try {
-      const response = await fetch("http://localhost:8085/portfolio/total");
+      const response = await fetch("http://localhost:8080/portfolio/total");
       if (!response.ok) {
         throw new Error("Network response was not ok");
       }
@@ -39,7 +39,7 @@ const Portfolio = () => {
       },
     };
   
-    const response = await fetch("http://localhost:8085/portfolio/data", options);
+    const response = await fetch("http://localhost:8080/portfolio/data", options);
     getPortfolioData(); 
     const result = await response.json();
     return result;
@@ -54,7 +54,7 @@ const Portfolio = () => {
       },
     };
     const response = await fetch(
-      `http://localhost:8085/portfolio/data/${stocksym}`,
+      `http://localhost:8080/portfolio/data/${stocksym}`,
       options
     );
     if (!response.ok) {

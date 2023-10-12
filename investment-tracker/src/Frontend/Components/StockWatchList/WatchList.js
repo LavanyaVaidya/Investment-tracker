@@ -44,7 +44,7 @@ const WatchList = () => {
   };
 
   const getStockScreenerData = async () => {
-    const response = await fetch("http://localhost:8090/watchlist/data");
+    const response = await fetch("http://localhost:8080/watchlist/data");
     const result = await response.json();
     setInScreenerData(result)
     
@@ -52,7 +52,7 @@ const WatchList = () => {
   };
 
   const getWatchListSymbols = async () => {
-    const response = await fetch("http://localhost:8090/watchlist/symbol");
+    const response = await fetch("http://localhost:8080/watchlist/symbol");
     const result = await response.json();
     setSymbols(result)
      getStockScreenerData(); 
@@ -67,7 +67,7 @@ const WatchList = () => {
         "Content-Type": "application/json",
       },
     };
-    const response = await fetch("http://localhost:8090/watchlist/symbol", options);
+    const response = await fetch("http://localhost:8080/watchlist/symbol", options);
     const result = await response.json();
      getStockScreenerData(); 
     return result;
@@ -80,7 +80,7 @@ const WatchList = () => {
         "Content-Type": "application/json",
       },
     };
-    const response = await fetch(`http://localhost:8090/watchlist/data/${stocksym}`,options);
+    const response = await fetch(`http://localhost:8080/watchlist/data/${stocksym}`,options);
     if (!response.ok) {
       alert("network Error ");
     }

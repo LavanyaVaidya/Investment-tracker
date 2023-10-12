@@ -1,0 +1,17 @@
+.portfolioChartCard{
+    margin: 20px;
+    padding: 20px;
+    width: 44%;
+    /* display: flex; */
+    justify-content: center;
+    height: auto;
+    border-radius: 22px;
+    border: 1px solid #fbf6f6;
+    box-shadow: 0px 0px 31px 0px rgba(169, 168, 168, 0.5);
+}
+.donut_chart{
+    
+    width: 60%;
+    
+}
+

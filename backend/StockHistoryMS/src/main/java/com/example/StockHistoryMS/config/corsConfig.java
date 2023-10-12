@@ -14,7 +14,7 @@ public class corsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/stockHistory")
-                        .allowedOrigins("http://localhost:3002")
+                        .allowedOrigins("http://localhost:3000")
                         .allowedMethods("GET"); // Add other methods if needed
             }
         };
