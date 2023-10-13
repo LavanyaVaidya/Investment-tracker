@@ -60,6 +60,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>QuestionsMS</finalName>
 	</build>
 
 </project>

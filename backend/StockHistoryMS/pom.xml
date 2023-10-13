@@ -60,6 +60,7 @@
 				</configuration>
 			</plugin>
 		</plugins>
+		<finalName>StockHistoryMS</finalName>
 	</build>
 
 </project>
