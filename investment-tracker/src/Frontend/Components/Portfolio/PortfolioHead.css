@@ -1,0 +1,52 @@
+.portfolio_head{
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    font-size: 1.125rem;
+    font-weight: 400;
+    line-height: 1.5;
+}
+ .holding_{
+     display: flex;
+     color: #444;
+     justify-content: space-evenly;
+}
+.holding_icon{
+    margin: 10px;
+}
+.holding_number{
+    height: fit-content;
+    padding: 7px;
+}
+.holding_:hover, .holding_ span:hover, 
+.portfolio_analytics:hover, 
+.portfolio_analytics button:hover{
+    color: black;
+    cursor: pointer;
+}
+
+.portfolio_analytics{
+  
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: #444;
+    height: fit-content;
+    justify-content: space-evenly;
+    /* background-color: aliceblue; */
+
+}
+.port_analytics_icon{
+    background-color: none;
+}
+
+
+.portfolio_search{
+    padding: 10px;
+    color: #444;
+   
+    
+}
+
+

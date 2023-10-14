@@ -1,0 +1,72 @@
+
+.portfolio_form {
+  height: fit-content;
+  padding: 5px;
+}
+
+.portfolio_add_form{
+  border-radius: 12px;
+  background-color: #ebe4eb;
+  width:144px;
+  text-align: center;
+  float: right;
+  margin-right: 40px;
+}
+.portfolio_add_form button{
+  border: none;
+   background-color: inherit;
+   color: inherit;
+   font-size: 22px;
+   padding: 7px;
+   
+
+}
+
+
+.portfolio_add_form:hover
+, .portfolio_add_form button:hover
+,  .add_form_icon:hover {
+  cursor: pointer;
+  color: black;
+}
+
+.portfolio_form_img input[type="text"] {
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 10px;
+  font-size: 18px;
+  height: auto;
+  width: 100%;
+  background-color: #ebe4eb;
+  color: #0b0b0b;
+  margin-bottom: 20px;
+  padding: 12px;
+}
+.portfolio_form_div button{
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 400;
+  line-height: 2;
+  text-align: center;
+  width: 100%;
+}
+.portfolio_form_img{
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  margin: 10px;
+
+}
+.portfolio_form_img img{
+  max-width: 50%;
+  max-height: 40%;
+  object-fit: cover;
+}
+
+  
+  .portfolio_form_img form{
+ 
+    margin-top: 50px;
+  }

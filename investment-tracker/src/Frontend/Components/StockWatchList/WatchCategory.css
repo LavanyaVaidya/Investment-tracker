@@ -1,0 +1,60 @@
+.watchList_category{
+    padding: 20px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    flex-shrink: initial;
+ }
+ 
+ .stock_category  h2{
+     padding: 10px;
+     margin: 20px;
+     width: fit-content;
+ 
+     border-radius: 30px;
+     background: #FFF;
+     box-shadow: 0px 1px 14px 0px rgba(0, 0, 0, 0.13);
+     color: black;
+     font-family: Poppins;
+     font-size: 20px;
+     font-style: normal;
+     font-weight: 500;
+ }
+ .stock_category:hover{
+     cursor: pointer;
+     transform: translate(-0px, -3px );
+ }
+ 
+ /* .category_create{
+     margin: 20px;
+     width: 133px;
+     height: 44px;
+     border-radius: 5px;
+     background: #5a287d;
+     border: none;
+     color: #FFF;
+     font-size: 20px;
+ } */
+ 
+ /* .category_create:hover{
+     transform: translate(-0px, -3px );
+ } */
+ .add_stocks_btn{
+     display: flex;
+     justify-content: right;
+ }
+ 
+ .category_stocks_items {
+    max-height: 60px; 
+    overflow-y: auto; 
+    border: 1px solid #ccc; 
+
+ }
+ .category_stocks_items li{
+    cursor: pointer;
+    list-style: none;
+    /* width: 100%; */
+    padding: 2px;
+    
+    /* margin-right: 35px; */
+ }

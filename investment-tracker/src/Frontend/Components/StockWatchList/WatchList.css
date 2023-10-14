@@ -1,0 +1,34 @@
+.watchList{
+    margin-top: 80px;
+}
+.watchList_addlist_head{
+   
+    padding: 20px 0 20px 0 ;
+    display: flex;
+    justify-content: space-between;  
+}
+.watchList_addlist_head img{
+    height: 100px;
+    object-fit: contain;
+}
+.watchList_addlist_head h1{
+    color: rgba(37, 37, 37, 0.94);
+    text-align: center;
+    font-family: 'Poppins';
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 78px; /* 111.429% */
+    letter-spacing: 0.7px
+}
+
+@media (min-width: 310px) and (max-width: 565px) {
+.watchList_addlist_head img{
+  height: 0%;
+  width: 0%;
+}
+.watchList_addlist_head h1{
+    font-size: 55px;
+    
+}
+   
+  }

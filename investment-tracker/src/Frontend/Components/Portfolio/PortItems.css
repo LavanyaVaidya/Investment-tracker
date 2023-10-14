@@ -1,0 +1,55 @@
+.port_items{
+    display: flex;
+    flex-wrap: wrap
+}
+.port_items table {
+  width: 100%;
+  text-align: left;
+  border-top: 1px solid #f1f1f1;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+.port_items table thead{
+    box-shadow: 0 1px 0 #f1f1f1;
+    display: table-header-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+.port_items table thead th{
+    font-weight: 400;
+    padding: 15px 12px;
+    color:#9b9b9b;
+    border-bottom: 1px solid #f1f1f1;
+}
+.port_items table thead th.right-border {
+    border-right: 1px solid #f1f1f1;
+}
+.port_items table thead .right{
+    text-align: right;
+}
+.port_items tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.port_items table tbody tr td {
+    min-width: 30px;
+    padding: 10px 12px;
+    border-bottom: 1px solid #f1f1f1;
+   
+}
+
+
+.port_items table tbody tr td .right-border {
+    border-right: 1px solid #f1f1f1;
+    
+}
+
+.right_items{
+  text-align: right;
+}
+.stock_delete_btn_tbl:hover{
+    color: #9b9b9b;
+    cursor: pointer;
+}
